@@ -1,29 +1,32 @@
-import React from 'react'
-import NextHead from 'next/head'
-import { string } from 'prop-types'
+import React from 'react';
+import NextHead from 'next/head';
+import { string } from 'prop-types';
 
-const defaultDescription = ''
-const defaultOGURL = ''
-const defaultOGImage = ''
-
-const Head = props => (
+const Head = ({ title, description, url, ogImage }) => (
   <NextHead>
-    <title>{props.title || ''}</title>
-    <meta name="description" content={props.description || defaultDescription} />
-    <meta property="og:url" content={props.url || defaultOGURL} />
-    <meta property="og:title" content={props.title || ''} />
-    <meta property="og:description" content={props.description || defaultDescription} />
-    <meta name="twitter:site" content={props.url || defaultOGURL} />
-    <meta name="twitter:image" content={props.ogImage || defaultOGImage} />
-    <meta property="og:image" content={props.ogImage || defaultOGImage} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:site" content={url} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta property="og:image" content={ogImage} />
   </NextHead>
-)
+);
 
 Head.propTypes = {
   title: string,
   description: string,
   url: string,
-  ogImage: string
-}
+  ogImage: string,
+};
 
-export default Head
+Head.defaultProps = {
+  title: 'Code Garage',
+  description: '',
+  url: '',
+  ogImage: '',
+};
+
+export default Head;

@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import Button from '@material-ui/core/Button';
-import Link from 'next/link'
-import Head from '../components/head'
-import Nav from '../components/nav'
+import Link from 'next/link';
+import Head from '../components/head';
+import Nav from '../components/nav';
 
 const Home = () => (
   <div>
@@ -15,9 +15,7 @@ const Home = () => (
         To get started, edit <code>pages/index.js</code> and save to reload.
       </p>
 
-      <Button variant="contained">
-        Default
-      </Button>
+      <Button variant="contained">Default</Button>
 
       <div className="row">
         <Link href="https://github.com/zeit/next.js#getting-started">
@@ -30,8 +28,7 @@ const Home = () => (
           <a className="card">
             <h3>Examples &rarr;</h3>
             <p>
-              Find other example boilerplates on the{' '}
-              <code>create-next-app</code> site
+              Find other example boilerplates on the <code>create-next-app</code> site
             </p>
           </a>
         </Link>
@@ -91,6 +88,6 @@ const Home = () => (
       }
     `}</style>
   </div>
-)
+);
 
-export default Home
+export default Home;
