@@ -8,7 +8,7 @@ const Home = () => (
     <Head title="Code Garage" />
     <Header />
     <Typography variant="h6" color="inherit">
-      Holis dev
+      Que se yo
     </Typography>
   </div>
 );
