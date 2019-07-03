@@ -1,7 +1,7 @@
 {
   "version": 2,
   "alias": [
-    "codegarage.now.sh"
+    "dev.codegarage.now.sh"
   ],
   "builds": [
     {
