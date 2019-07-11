@@ -9,9 +9,9 @@ const Head = ({ title, description, url, ogImage }) => (
     <meta property="og:url" content={url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
     <meta name="twitter:site" content={url} />
     <meta name="twitter:image" content={ogImage} />
-    <meta property="og:image" content={ogImage} />
   </NextHead>
 );
 

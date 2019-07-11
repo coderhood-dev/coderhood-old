@@ -1,16 +1,19 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import Head from '../components/head';
-import Header from '../components/Header';
+import { ThemeProvider } from '@material-ui/styles';
+import Layout from 'components/Layout';
+import Hero from 'components/Landing/Hero';
+import Roadmaps from 'components/Roadmaps';
+import darkTheme from 'theme/darkTheme';
 
-const Home = () => (
-  <div>
-    <Head title="Code Garage" />
-    <Header />
-    <Typography variant="h6" color="inherit">
-      Que se yo, final
-    </Typography>
-  </div>
-);
+const Home = () => {
+  return (
+    <Layout>
+      <Hero />
+      <ThemeProvider theme={darkTheme}>
+        <Roadmaps />
+      </ThemeProvider>
+    </Layout>
+  );
+};
 
 export default Home;
