@@ -21,7 +21,7 @@ const Header = () => {
       <AppBar position="static" color="default">
         <Toolbar>
           <Typography variant="h6" color="inherit" className={styles.title}>
-            Code Garage
+            Code Garage Beta
           </Typography>
           <Button color="inherit">Ingresa</Button>
           <Button color="inherit">Registrate</Button>
