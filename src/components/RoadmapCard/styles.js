@@ -6,6 +6,8 @@ const useStyles = makeStyles(theme => ({
     width: 345,
     position: 'relative',
     zIndex: 100,
+    display: 'flex',
+    flexDirection: 'column',
   },
   progress: {
     width: '100%',

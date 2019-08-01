@@ -31,7 +31,12 @@ const RoadmapCard = ({ data, progress, onProgressUpdate, detailIndex, onPressDet
   const [expanded, setExpanded] = useState(false);
   const [checked, setChecked] = useState([]);
 
-  const handleExpandClick = () => setExpanded(!expanded);
+  const handleExpandClick = () => {
+    if (detailIndex !== null) {
+      onPressDetail(null);
+    }
+    setExpanded(!expanded);
+  };
   const handleDetailClick = i => {
     onPressDetail(i);
   };
@@ -76,7 +81,7 @@ const RoadmapCard = ({ data, progress, onProgressUpdate, detailIndex, onPressDet
         }
         title={data.title}
       />
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+      <Collapse in={expanded} timeout="auto" unmountOnExit style={{ flex: 1 }}>
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
             HTML es un lenguaje de sintaxis y el esqueleto de cada web. Nos permitira definir la
@@ -87,7 +92,14 @@ const RoadmapCard = ({ data, progress, onProgressUpdate, detailIndex, onPressDet
               const labelId = `checkbox-list-label-${i}`;
 
               return (
-                <ListItem key={i} role={undefined} dense button onClick={handleToggle(i)}>
+                <ListItem
+                  key={i}
+                  role={undefined}
+                  dense
+                  button
+                  onClick={handleToggle(i)}
+                  selected={detailIndex === i}
+                >
                   <ListItemIcon>
                     <Checkbox
                       edge="start"

@@ -74,6 +74,14 @@ const dataCSS = {
     {
       title: 'Learn the basics',
       description: ' asd a sd adlkasjd asldjasd lad asdlakjda sdfsds sdf sdfsfs sdf',
+      links: [
+        'https://material.io/design/components/cards.html#card-collections',
+        'https://www.howtographql.com/basics/2-core-concepts/',
+        'https://buttercms.com/docs/api-client/nextjs',
+        'https://material.io/design/components/cards.html#card-collections',
+        'https://www.howtographql.com/basics/2-core-concepts/',
+        'https://buttercms.com/docs/api-client/nextjs',
+      ],
     },
     {
       title: 'Learn the basics',

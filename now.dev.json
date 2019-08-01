@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "alias": [
+    "beta.coderhood.dev"
+  ],
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/next"
+    }
+  ]
+}

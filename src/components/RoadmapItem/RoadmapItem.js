@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import RoadmapCard from 'components/RoadmapCard';
 import RoadmapDetail from 'components/RoadmapDetail';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -26,7 +27,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const RoadmapItem = ({ data }) => {
-  const [detailIndex, setDetailIndex] = useState(false);
+  const [detailIndex, setDetailIndex] = useState(null);
   const [progress, setProgress] = useState(0);
 
   const handlePressDetail = i => {
@@ -45,7 +46,18 @@ const RoadmapItem = ({ data }) => {
           onPressDetail={handlePressDetail}
           onProgressUpdate={handleProgressUpdate}
         />
-        <RoadmapDetail detailIndex={detailIndex} data={data} />
+        {detailIndex !== null && (
+          <AnimatePresence>
+            <motion.div
+              initial={{ x: -300, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -300, opacity: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+            >
+              <RoadmapDetail detailIndex={detailIndex} data={data} />
+            </motion.div>
+          </AnimatePresence>
+        )}
       </div>
       <div className={styles.progressDivider} />
     </div>
