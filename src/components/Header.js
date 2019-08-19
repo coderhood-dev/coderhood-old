@@ -6,6 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import ThemeSwitcher from './ThemeSwitcher';
+import SidePanel from './SidePanel/SidePanel'
 
 const useStyles = makeStyles({
   container: {
@@ -39,12 +40,10 @@ const Header = () => {
       <AppBar position="fixed" color="primary" elevation={elevated ? 4 : 0}>
         <Toolbar>
           <Typography variant="h6" color="inherit" className={styles.title}>
-            CODE GARAGE
+            CODERHOOD
           </Typography>
           <ThemeSwitcher />
-          <Button color="inherit">Blog</Button>
-          <Button color="inherit">Ingresa</Button>
-          <Button color="inherit">Registrate</Button>
+          <SidePanel />
         </Toolbar>
       </AppBar>
     </div>
