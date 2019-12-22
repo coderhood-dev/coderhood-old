@@ -1,14 +1,25 @@
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import Typography from "@material-ui/core/Typography";
+import IconButton from "@material-ui/core/IconButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
 import Layout from "@components/Layout";
 
-export default function BlogTemplate(props) {
-  // data from getInitialProps
-  const markdownBody = props.content;
-  const frontmatter = props.data;
+export default function BlogTemplate({
+  content: markdownBody,
+  data: frontmatter,
+  post
+}) {
   return (
     <Layout>
+      <IconButton
+        target="_blank"
+        href={`https://github.com/coderhooddev/coderhood/blob/master/posts/${post}.md`}
+      >
+        <FontAwesomeIcon icon={faGithub} />
+      </IconButton>
       <article>
         <Typography variant="h3" color="inherit">
           {frontmatter.title}
@@ -29,6 +40,7 @@ BlogTemplate.getInitialProps = async context => {
   // gray-matter parses the yaml frontmatter from the md body
   const data = matter(content.default);
   return {
-    ...data
+    ...data,
+    post
   };
 };
