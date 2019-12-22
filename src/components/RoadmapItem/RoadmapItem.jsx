@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import RoadmapCard from 'components/RoadmapCard';
-import RoadmapDetail from 'components/RoadmapDetail';
+import RoadmapCard from '@components/RoadmapCard';
+import RoadmapDetail from '@components/RoadmapItem';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     display: 'flex',
     flexDirection: 'column',
@@ -17,12 +17,14 @@ const useStyles = makeStyles(theme => ({
     transition: 'all 0.3s ease-in-out',
     position: 'relative',
   },
-  progressDivider: props => ({
+  progressDivider: (props) => ({
     width: theme.spacing(0.5),
     height: theme.spacing(4),
     position: 'relative',
     right: theme.spacing(15),
-    backgroundColor: props.complete ? theme.palette.secondary.main : theme.palette.primary.main,
+    backgroundColor: props.complete
+      ? theme.palette.secondary.main
+      : theme.palette.primary.main,
   }),
 }));
 
@@ -30,10 +32,10 @@ const RoadmapItem = ({ data }) => {
   const [detailIndex, setDetailIndex] = useState(null);
   const [progress, setProgress] = useState(0);
 
-  const handlePressDetail = i => {
+  const handlePressDetail = (i) => {
     setDetailIndex(detailIndex !== i ? i : null);
   };
-  const handleProgressUpdate = newProgress => setProgress(newProgress);
+  const handleProgressUpdate = (newProgress) => setProgress(newProgress);
 
   const styles = useStyles({ complete: progress === 100 });
   return (

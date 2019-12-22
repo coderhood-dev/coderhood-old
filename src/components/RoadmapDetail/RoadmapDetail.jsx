@@ -15,7 +15,7 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   contentContainer: {
     position: 'relative',
     left: -theme.spacing(2),
@@ -74,7 +74,14 @@ const RoadmapDetail = ({ data: { items }, detailIndex }) => {
         justifyContent="center"
         alignItems="center"
       >
-        <Box component="img" src="/static/notFound.png" alt="No content" width="40%" mb={2} s />
+        <Box
+          component="img"
+          src="/static/notFound.png"
+          alt="No content"
+          width="40%"
+          mb={2}
+          s
+        />
         <Typography color="textSecondary" variant="subtitle1">
           Todavia no hay recomendaciones
         </Typography>
@@ -84,7 +91,12 @@ const RoadmapDetail = ({ data: { items }, detailIndex }) => {
 
   return (
     <Paper className={styles.contentContainer} elevation={0}>
-      <Box component={CardContent} display="flex" flexDirection="column" height="100%">
+      <Box
+        component={CardContent}
+        display="flex"
+        flexDirection="column"
+        height="100%"
+      >
         <Typography color="textSecondary" variant="overline" gutterBottom>
           Recursos útiles
         </Typography>

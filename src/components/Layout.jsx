@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import ThemeContext, { ThemeProvider } from 'theme/ThemeProvider';
+import ThemeContext, { ThemeProvider } from '@theme/ThemeProvider';
 import Head from './Head';
 import Header from './Header';
 import Footer from './Footer';
@@ -24,8 +24,10 @@ const Layout = ({ children, title }) => (
 );
 
 Layout.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)])
-    .isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]).isRequired,
   title: PropTypes.string,
 };
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import ColumnLeft from 'components/ColumnLeft';
+import ColumnLeft from '@components/ColumnLeft';
 import { makeStyles } from '@material-ui/core/styles';
 import SocialIcons from './SocialIcons';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   footerContainer: {
     width: '100%',
     padding: '40px 80px',
@@ -25,10 +25,12 @@ const Footer = () => {
           Code Garage 2019
         </Typography>
         <Typography variant="caption" color="inherit">
-          Made with{' '}
+          Made with
+{" "}
           <span role="img" aria-label="hearth">
             ❤️
-          </span>{' '}
+          </span>
+{" "}
           by Code Garage Team
         </Typography>
       </ColumnLeft>

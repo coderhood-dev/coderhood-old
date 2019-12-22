@@ -1,6 +1,5 @@
-import React from 'react';
-import Layout from 'components/Layout';
-import Hero from 'components/Landing/Hero';
+import Layout from "@components/Layout";
+import Hero from "@components/Landing/Hero";
 
 const About = () => {
   return (

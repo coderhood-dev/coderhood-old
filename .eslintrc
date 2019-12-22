@@ -1,10 +1,17 @@
 {
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "node": true
   },
   "parser": "babel-eslint",
-  "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb"],
+  "extends": [
+    "eslint:recommended",
+    "prettier/react",
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier"
+  ],
   "settings": {
     "react": {
       "version": "detect"
@@ -20,6 +27,6 @@
   "plugins": ["react"],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "import/no-unresolved": ["error", {"ignore": ["^@"]}]
+    "import/no-unresolved": ["error", { "ignore": ["^@"] }]
   }
 }

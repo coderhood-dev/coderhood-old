@@ -21,10 +21,16 @@ import styled from 'styled-components';
 import useStyles from './styles';
 
 const AvatarBackground = styled(Avatar)`
-  background-color: ${props => props.background} !important;
+  background-color: ${(props) => props.background} !important;
 `;
 
-const RoadmapCard = ({ data, progress, onProgressUpdate, detailIndex, onPressDetail }) => {
+const RoadmapCard = ({
+  data,
+  progress,
+  onProgressUpdate,
+  detailIndex,
+  onPressDetail,
+}) => {
   const { items } = data;
 
   const styles = useStyles();
@@ -37,11 +43,11 @@ const RoadmapCard = ({ data, progress, onProgressUpdate, detailIndex, onPressDet
     }
     setExpanded(!expanded);
   };
-  const handleDetailClick = i => {
+  const handleDetailClick = (i) => {
     onPressDetail(i);
   };
 
-  const handleToggle = i => () => {
+  const handleToggle = (i) => () => {
     const currentIndex = checked.indexOf(i);
     const newChecked = [...checked];
 
@@ -57,7 +63,7 @@ const RoadmapCard = ({ data, progress, onProgressUpdate, detailIndex, onPressDet
   return (
     <Card className={styles.card}>
       <CardHeader
-        avatar={
+        avatar={(
           <AvatarBackground
             aria-label="Recipe"
             src={data.image}
@@ -66,11 +72,11 @@ const RoadmapCard = ({ data, progress, onProgressUpdate, detailIndex, onPressDet
           >
             CG
           </AvatarBackground>
-        }
-        action={
+        )}
+        action={(
           <IconButton
             className={clsx(styles.expand, {
-              [styles.expandOpen]: expanded,
+              [styles.expandOpen]: expanded
             })}
             onClick={handleExpandClick}
             aria-expanded={expanded}
@@ -78,14 +84,14 @@ const RoadmapCard = ({ data, progress, onProgressUpdate, detailIndex, onPressDet
           >
             <ExpandMoreIcon />
           </IconButton>
-        }
+        )}
         title={data.title}
       />
       <Collapse in={expanded} timeout="auto" unmountOnExit style={{ flex: 1 }}>
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            HTML es un lenguaje de sintaxis y el esqueleto de cada web. Nos permitira definir la
-            estructura de elementos de nuestra web.
+            HTML es un lenguaje de sintaxis y el esqueleto de cada web. Nos
+            permitira definir la estructura de elementos de nuestra web.
           </Typography>
           <List className={styles.root}>
             {items.map((item, i) => {
