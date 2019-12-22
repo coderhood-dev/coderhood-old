@@ -6,4 +6,4 @@ hero_image: ../static/bali-15.jpg
 ---
 
 this is a react intro post
-React es un framework de python
+React es un framework de js, boludo
