@@ -13,10 +13,10 @@
     "@material-ui/system": "4.3.0",
     "clsx": "1.0.4",
     "framer-motion": "1.2.2",
-    "next": "8.1.0",
+    "next": "9.1.6",
     "prop-types": "15.7.2",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
     "react-sky": "1.1.0",
     "styled-components": "4.3.2"
   },
