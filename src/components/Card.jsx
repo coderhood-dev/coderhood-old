@@ -4,11 +4,7 @@ import PropTypes from 'prop-types';
 
 const Card = ({ data }) => (
   <CardContainer>
-    <img
-      style={{
-        height: '100px',
-        marginBottom: '18px',
-      }}
+    <Img
       src="/static/reactIcon.svg"
       alt="img"
     />
@@ -37,7 +33,7 @@ const CardContainer = styled.div`
     background-color: #1f2327;
     border: 2px solid #6d7579;
     box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.2);
-  }
+  };
 `;
 
 const Title = styled.p`
@@ -57,6 +53,11 @@ const SubTitle = styled.p`
   margin-top: 10px;
   text-align: center;
   margin-bottom: 60px;
+`;
+
+const Img = styled.img`
+  height: 100px;
+  margin-bottom: 18px;
 `;
 
 Card.propTypes = {
