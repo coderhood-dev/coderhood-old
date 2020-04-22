@@ -10,4 +10,7 @@
   // available through eslint plugin in vscode
   "eslint.autoFixOnSave": true,
   "eslint.alwaysShowStatus": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
 }
