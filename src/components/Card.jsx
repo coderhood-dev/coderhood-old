@@ -9,7 +9,7 @@ const Card = ({ data }) => (
       alt="img"
     />
     <Title>{data.name}</Title>
-    <SubTitle>{data.description}</SubTitle>
+    <Description>{data.description}</Description>
   </CardContainer>
 );
 
@@ -47,7 +47,7 @@ const Title = styled.p`
   }
 `;
 
-const SubTitle = styled.p`
+const Description = styled.p`
   color: #bbbcbe;
   font-size: 16px;
   margin-top: 10px;
