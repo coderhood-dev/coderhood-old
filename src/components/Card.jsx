@@ -14,6 +14,7 @@ const Card = ({ data }) => (
 );
 
 const CardContainer = styled.div`
+  bottom: 0px;
   width: 235px;
   height: 312px;
   display: flex;
@@ -25,11 +26,11 @@ const CardContainer = styled.div`
   align-items: center;
   flex-direction: column;
   border: 2px solid #2b2f33;
-  transition: all 0.2s ease;
   background-color: #1b1f23;
+  transition: all 0.3s ease;
 
   &:hover {
-    bottom: 3px;
+    bottom: 2px;
     background-color: #1f2327;
     border: 2px solid #6d7579;
     box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.2);
