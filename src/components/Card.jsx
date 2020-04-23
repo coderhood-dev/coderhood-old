@@ -30,7 +30,7 @@ const CardContainer = styled.div`
   transition: all 0.3s ease;
 
   &:hover {
-    bottom: 2px;
+    bottom: 1px;
     background-color: #1f2327;
     border: 2px solid #6d7579;
     box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.2);
@@ -42,6 +42,7 @@ const Title = styled.p`
   color: #f2ecff;
   font-size: 25px;
   letter-spacing: 1px;
+  transition: all 0.3s ease;
 
   ${CardContainer}:hover & {
     color: #6db23f;
