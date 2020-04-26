@@ -22,14 +22,10 @@ const Footer = () => {
     <div className={styles.footerContainer}>
       <ColumnLeft>
         <Typography variant="body2" color="inherit">
-          Coderhood 2020
+          {`${process.env.APP_NAME} ${new Date().getFullYear()}`}
         </Typography>
         <Typography variant="caption" color="inherit">
-          Made with{' '}
-          <span role="img" aria-label="hearth">
-            ❤️
-          </span>{' '}
-          by Coderhood Team
+          {`Made with 🦄 by ${process.env.APP_NAME} Team`}
         </Typography>
       </ColumnLeft>
       <SocialIcons />

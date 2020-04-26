@@ -33,7 +33,7 @@ const Hero = () => {
           Todos pueden programar, aprendamos juntos.
         </Typography>
         <Typography variant="subtitle1" color="inherit">
-          Coderhood es la plataforma open source que impulsa el aprendizaje colaborativo y continuo.
+          {`${process.env.APP_NAME} es la plataforma open source que impulsa el aprendizaje colaborativo y continuo.`}
         </Typography>
       </ColumnLeft>
       <img

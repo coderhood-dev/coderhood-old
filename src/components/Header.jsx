@@ -29,7 +29,7 @@ const Header = () => {
           <Toolbar>
             <Link href="/">
               <Typography variant="h6" color="inherit" className={styles.title}>
-                Coderhood
+                {process.env.APP_NAME}
               </Typography>
             </Link>
             <ThemeSwitcher />

@@ -23,7 +23,7 @@ Head.propTypes = {
 };
 
 Head.defaultProps = {
-  title: 'Coderhood',
+  title: process.env.APP_NAME,
   description: '',
   url: '',
   ogImage: '',
