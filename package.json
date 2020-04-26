@@ -24,17 +24,14 @@
     "styled-components": "4.3.2"
   },
   "devDependencies": {
-    "babel-eslint": "10.0.3",
+    "@types/node": "^13.13.4",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
     "babel-plugin-module-resolver": "4.0.0",
-    "eslint": "6.8.0",
-    "eslint-config-airbnb": "18.0.1",
-    "eslint-config-prettier": "6.0.0",
-    "eslint-plugin-import": "2.19.1",
-    "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-prettier": "3.1.0",
-    "eslint-plugin-react": "7.17.0",
-    "eslint-plugin-react-hooks": "2.3.0",
-    "prettier": "1.18.2"
+    "tslint": "^6.1.1",
+    "tslint-config-airbnb": "^5.11.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "dev": "next",
