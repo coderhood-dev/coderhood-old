@@ -33,8 +33,7 @@ const Hero = () => {
           Todos pueden programar, aprendamos juntos.
         </Typography>
         <Typography variant="subtitle1" color="inherit">
-          Code Garage es la plataforma open source que impulsa el aprendizaje colaborativo y
-          continuo.
+          Coderhood es la plataforma open source que impulsa el aprendizaje colaborativo y continuo.
         </Typography>
       </ColumnLeft>
       <img

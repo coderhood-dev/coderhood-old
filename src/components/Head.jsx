@@ -23,7 +23,7 @@ Head.propTypes = {
 };
 
 Head.defaultProps = {
-  title: 'Code Garage',
+  title: 'Coderhood',
   description: '',
   url: '',
   ogImage: '',

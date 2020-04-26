@@ -22,16 +22,14 @@ const Footer = () => {
     <div className={styles.footerContainer}>
       <ColumnLeft>
         <Typography variant="body2" color="inherit">
-          Code Garage 2019
+          Coderhood 2020
         </Typography>
         <Typography variant="caption" color="inherit">
-          Made with
-{" "}
+          Made with{' '}
           <span role="img" aria-label="hearth">
             ❤️
-          </span>
-{" "}
-          by Code Garage Team
+          </span>{' '}
+          by Coderhood Team
         </Typography>
       </ColumnLeft>
       <SocialIcons />
