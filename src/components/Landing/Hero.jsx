@@ -35,11 +35,11 @@ const Hero = () => {
           {`${process.env.APP_NAME} es la plataforma open source que impulsa el aprendizaje colaborativo y continuo.`}
         </Typography>
       </ColumnLeft>
-      <img
+      {/* <img
         src="/static/learning_together.png"
         alt="Learning Together"
         className={styles.heroImage}
-      />
+      /> */}
     </Container>
   );
 };
