@@ -10,7 +10,7 @@ export const ThemeProvider = props => {
   function switchTheme(theme, setTheme) {
     setTheme(theme.name === 'dark' ? themes.light : themes.dark);
   }
-  const [theme, setTheme] = useState(themes.light);
+  const [theme, setTheme] = useState(themes.dark);
   const themeContext = {
     theme,
     switchTheme: () => switchTheme(theme, setTheme),
