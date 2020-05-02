@@ -1,9 +1,8 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import { grey, orange } from '@material-ui/core/colors';
+import { Theme, colors } from '@material-ui/core';
 
 // Create a theme instance.
-const theme = createMuiTheme({
-  name: 'dark',
+const theme: Theme = createMuiTheme({
   spacing: 8,
   overrides: {
     MuiTypography: {
@@ -13,19 +12,19 @@ const theme = createMuiTheme({
     },
   },
   palette: {
-    type: 'dark',
+    type: 'light',
     primary: {
-      main: grey[800],
-      light: grey[700],
-      dark: grey[900],
-    },
-    secondary: {
-      main: orange.A400,
+      main: colors.grey[100],
       light: '#FFFFFF',
       dark: '#C2C2C2',
     },
+    secondary: {
+      main: colors.orange.A400,
+      light: '#484848',
+      dark: '#000000',
+    },
     background: {
-      default: grey[900],
+      default: colors.grey[100],
     },
   },
 });
