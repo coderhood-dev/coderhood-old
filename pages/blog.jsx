@@ -1,8 +1,8 @@
-import React from "react";
-import Typography from "@material-ui/core/Typography";
-import Link from "next/link";
-import matter from "gray-matter";
-import Layout from "@components/Layout";
+import React from 'react';
+import Typography from '@material-ui/core/Typography';
+import Link from 'next/link';
+import matter from 'gray-matter';
+import { Layout } from '../src/components';
 
 const Blog = ({ posts }) => (
   <Layout>
@@ -10,7 +10,7 @@ const Blog = ({ posts }) => (
       Blog
     </Typography>
     <section>
-      {posts.map(post => (
+      {posts.map((post) => (
         <Link key={post.slug} href={{ pathname: `/blog/${post.slug}` }}>
           <h3>{post.data.title}</h3>
         </Link>
@@ -21,7 +21,7 @@ const Blog = ({ posts }) => (
 
 Blog.getInitialProps = () => {
   // get all .md files from the src/posts dir
-  const posts = (ctx => {
+  const posts = ((ctx) => {
     // grab all the files matching this context
     const keys = ctx.keys();
     // grab the values from these files
@@ -30,22 +30,22 @@ Blog.getInitialProps = () => {
     const data = keys.map((key, index) => {
       // Create slug from filename
       const slug = key
-        .replace(/^.*[\\\/]/, "")
-        .split(".")
+        .replace(/^.*[\\\/]/, '')
+        .split('.')
         .slice(0, -1)
-        .join(".");
+        .join('.');
       // get the current file value
       const value = values[index];
       // Parse frontmatter & markdownbody for the current file
       // return the .md content & pretty slug
       return {
         ...matter(value.default),
-        slug
+        slug,
       };
     });
     // return all the posts
     return data;
-  })(require.context("../posts", true, /\.md$/));
+  })(require.context('../posts', true, /\.md$/));
 
   return { posts };
 };

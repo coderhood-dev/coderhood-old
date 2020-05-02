@@ -1,17 +1,13 @@
-import matter from "gray-matter";
-import ReactMarkdown from "react-markdown";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import matter from 'gray-matter';
+import ReactMarkdown from 'react-markdown';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-import Layout from "@components/Layout";
+import { Layout } from '../../src/components';
 
-export default function BlogTemplate({
-  content: markdownBody,
-  data: frontmatter,
-  post
-}) {
+export default function BlogTemplate({ content: markdownBody, data: frontmatter, post }) {
   return (
     <Layout>
       <IconButton
@@ -32,7 +28,7 @@ export default function BlogTemplate({
   );
 }
 
-BlogTemplate.getInitialProps = async context => {
+BlogTemplate.getInitialProps = async (context) => {
   // context contains the query param
   const { post } = context.query;
   // grab the file in the posts dir based on the slug
@@ -41,6 +37,6 @@ BlogTemplate.getInitialProps = async context => {
   const data = matter(content.default);
   return {
     ...data,
-    post
+    post,
   };
 };
