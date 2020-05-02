@@ -1,8 +1,8 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import ColumnLeft from '@components/ColumnLeft';
 import { makeStyles } from '@material-ui/core/styles';
 import SocialIcons from './SocialIcons';
+import { Flex, ThemeSwitcher } from './';
 
 const useStyles = makeStyles((theme) => ({
   footerContainer: {
@@ -20,15 +20,16 @@ const Footer = () => {
   const styles = useStyles();
   return (
     <div className={styles.footerContainer}>
-      <ColumnLeft>
+      <Flex>
         <Typography variant="body2" color="inherit">
           {`${process.env.APP_NAME} ${new Date().getFullYear()}`}
         </Typography>
         <Typography variant="caption" color="inherit">
           {`Made with 🦄 by ${process.env.APP_NAME} Team`}
         </Typography>
-      </ColumnLeft>
+      </Flex>
       <SocialIcons />
+      <ThemeSwitcher />
     </div>
   );
 };

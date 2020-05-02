@@ -1,26 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Box } from '@material-ui/core';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import ThemeContext, { ThemeProvider } from '@theme/ThemeProvider';
+import ThemeContext from '@theme/ThemeProvider';
 import Head from './Head';
-import Header from './Header';
-import Footer from './Footer';
+import { Header, Footer } from './';
 
 const Layout = ({ children, title }) => (
-  <ThemeProvider>
-    <ThemeContext.Consumer>
-      {({ theme }) => (
-        <MuiThemeProvider theme={theme}>
-          <CssBaseline />
-          <Head title={title} />
-          <Header />
-          {children}
-          <Footer />
-        </MuiThemeProvider>
-      )}
-    </ThemeContext.Consumer>
-  </ThemeProvider>
+  <ThemeContext.Consumer>
+    {({ theme }) => (
+      <MuiThemeProvider theme={theme}>
+        <CssBaseline />
+        <Head title={title} />
+        <Header />
+        <Box pt={8}>{children}</Box>
+        <Footer />
+      </MuiThemeProvider>
+    )}
+  </ThemeContext.Consumer>
 );
 
 Layout.propTypes = {
@@ -32,7 +30,7 @@ Layout.propTypes = {
 };
 
 Layout.defaultProps = {
-  title: '',
+  title: process.env.APP_NAME,
 };
 
 export default Layout;
