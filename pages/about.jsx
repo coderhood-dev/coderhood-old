@@ -1,13 +1,7 @@
-import Layout from "@components/Layout";
-import Hero from "@components/Landing/Hero";
+import { Layout } from '../src/components';
 
 const About = () => {
-  return (
-    <Layout>
-      <Hero />
-      Soy Ema
-    </Layout>
-  );
+  return <Layout>About</Layout>;
 };
 
 export default About;
