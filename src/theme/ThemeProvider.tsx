@@ -8,23 +8,24 @@ interface Themes {
   dark: Theme;
 }
 
+export interface IThemeContext {
+  theme: Theme;
+  switchTheme: (currentTheme: Theme, changerFn: (theme: Theme) => void) => void;
+}
+
 export const themes: Themes = { light, dark };
 
-const ThemeContext: React.Context<Theme> = React.createContext(themes.dark);
+const ThemeContext: React.Context<IThemeContext> = React.createContext(null);
 
 export const ThemeProvider = ({ children }) => {
-  function switchTheme(currentTheme: Theme, changerFn: (theme: Theme) => void) {
-    changerFn(
-      currentTheme.palette.type === 'dark' ? themes.light : themes.dark
-    );
-  }
   const [theme, setTheme] = useState(themes.dark);
-  const themeContext = {
+  const themeContext: IThemeContext = {
     theme,
-    switchTheme: () => switchTheme(theme, setTheme),
+    switchTheme: () => {
+      setTheme(theme.palette.type === 'dark' ? themes.light : themes.dark);
+    },
   };
   return (
-    // @ts-ignore
     <ThemeContext.Provider value={themeContext}>
       {children}
     </ThemeContext.Provider>
