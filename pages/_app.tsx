@@ -1,8 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { ThemeProvider } from '../src/theme/ThemeProvider';
+import { AppProps } from 'next/app';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
+import ThemeContext, {
+  ThemeProvider,
+  IThemeContext,
+} from '../src/theme/ThemeProvider';
 
-const App = ({ Component, pageProps }) => {
+const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   React.useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
@@ -13,14 +17,15 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <ThemeProvider>
-      <Component {...pageProps} />
+      <ThemeContext.Consumer>
+        {(value: IThemeContext) => (
+          <MuiThemeProvider theme={value.theme}>
+            <Component {...pageProps} />
+          </MuiThemeProvider>
+        )}
+      </ThemeContext.Consumer>
     </ThemeProvider>
   );
-};
-
-App.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  pageProps: PropTypes.object.isRequired,
 };
 
 export default App;
