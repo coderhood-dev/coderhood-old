@@ -1,10 +1,18 @@
 import React from 'react';
-import fetch from 'isomorphic-unfetch';
 import { Typography } from '@material-ui/core';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import {
+  getRoadmaps,
+  getRoadmap,
+  GetRoadmapResponse,
+} from '../../src/api/roadmaps';
 import { Layout, Flex } from '../../src/components';
 
-const Roadmap = ({ roadmap }) => {
+interface Props {
+  roadmap: GetRoadmapResponse;
+}
+
+const Roadmap: React.FC<Props> = ({ roadmap }) => {
   return (
     <Layout>
       <Flex>
@@ -17,25 +25,20 @@ const Roadmap = ({ roadmap }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const url = `${process.env.BASE_URL}/roadmaps`;
-  const res = await fetch(url);
-  const { data: roadmaps } = await res.json();
+  const roadmaps = await getRoadmaps();
 
   // Get the paths we want to pre-render based on roadmaps
-  const paths = roadmaps.map((roadmap) => `/roadmap/${roadmap.name}`);
+  const paths = roadmaps.map((roadmap) => `/roadmaps/${roadmap.name}`);
 
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
   return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params: roadmap }) => {
-  const url = `${process.env.BASE_URL}/roadmaps/${roadmap.name}`;
-  const res = await fetch(url);
-  const { data } = await res.json();
-
+export const getStaticProps: GetStaticProps = async ({ params }: any) => {
+  const roadmap = await getRoadmap(params.name);
   return {
-    props: { roadmap: data },
+    props: { roadmap },
   };
 };
 
