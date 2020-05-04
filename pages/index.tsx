@@ -1,23 +1,13 @@
 import React from 'react';
-import fetch from 'isomorphic-unfetch';
 import styled from 'styled-components';
 import { GetStaticProps } from 'next';
-import {
-  Card,
-  CardActionArea,
-  CardContent,
-  Typography,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import { Theme } from '@material-ui/core/styles/createMuiTheme';
-import { Layout, Flex } from '../src/components';
+import { Typography } from '@material-ui/core';
+import { getRoadmaps, GetRoadmapsResponse } from '../src/api/roadmaps';
+import { Layout, Flex, Card } from '../src/components';
 
-const useStyles = makeStyles((theme: Theme) => ({
-  card: {
-    width: '25%',
-    margin: theme.spacing(2),
-  },
-}));
+interface Props {
+  roadmaps: GetRoadmapsResponse;
+}
 
 const Container = styled.div`
   height: 100vh;
@@ -28,8 +18,7 @@ const Container = styled.div`
   padding: 50px 11%;
 `;
 
-const Home = ({ roadmaps }) => {
-  const styles = useStyles({});
+const Home: React.FC<Props> = ({ roadmaps }) => {
   return (
     <Layout>
       <Container>
@@ -50,22 +39,13 @@ const Home = ({ roadmaps }) => {
       <Flex row center p={8}>
         {roadmaps &&
           roadmaps.map((roadmap) => (
-            <Card key={roadmap._id} className={styles.card}>
-              <CardActionArea>
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {roadmap.title}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    {roadmap.description}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
+            <Card
+              key={roadmap._id}
+              title={roadmap.title}
+              description={roadmap.description}
+              href="/roadmaps/[name]"
+              as={`/roadmaps/${roadmap.name}`}
+            />
           ))}
       </Flex>
     </Layout>
@@ -73,12 +53,9 @@ const Home = ({ roadmaps }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const url = `${process.env.BASE_URL}/roadmaps`;
-  const res = await fetch(url);
-  const { data } = await res.json();
-
+  const roadmaps = await getRoadmaps();
   return {
-    props: { roadmaps: data },
+    props: { roadmaps },
   };
 };
 
