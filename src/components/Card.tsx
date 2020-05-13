@@ -1,29 +1,23 @@
 import React from 'react';
-import Link from 'next/link';
 import { makeStyles } from '@material-ui/core/styles';
 import { Theme } from '@material-ui/core/styles/createMuiTheme';
-import {
-  Card,
-  CardActionArea,
-  CardContent,
-  Typography,
-} from '@material-ui/core';
+import Card, { CardProps } from '@material-ui/core/Card';
+import clsx from 'clsx';
 
-interface Props {
-  title: string;
-  description: string;
-  href?: string;
-  as?: string;
+interface ComponentProps {
+  children: React.ReactNode;
 }
+
+type Props = CardProps & ComponentProps;
 
 const useStyles = makeStyles((theme: Theme) => ({
   card: {
-    width: '25%',
+    minWidth: '25%',
     margin: theme.spacing(2),
   },
 }));
 
-const CardComponent: React.FC<Props> = ({ title, description, href, as }) => {
+const CardComponent: React.FC<Props> = ({ children, className }) => {
   const styles = useStyles({});
   const [raised, setRaised] = React.useState(false);
   const toogleRaised = () => {
@@ -31,23 +25,12 @@ const CardComponent: React.FC<Props> = ({ title, description, href, as }) => {
   };
   return (
     <Card
-      className={styles.card}
+      className={clsx(styles.card, className)}
       onMouseEnter={toogleRaised}
       onMouseLeave={toogleRaised}
-      raised={raised}
+      elevation={raised ? 3 : 1}
     >
-      <CardActionArea>
-        <Link href={href} as={as}>
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              {title}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {description}
-            </Typography>
-          </CardContent>
-        </Link>
-      </CardActionArea>
+      {children}
     </Card>
   );
 };

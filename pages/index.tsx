@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { GetStaticProps } from 'next';
-import { Typography } from '@material-ui/core';
+import Link from 'next/link';
+import { Typography, CardActionArea, CardContent } from '@material-ui/core';
 import { getRoadmaps, GetRoadmapsResponse } from '../src/api/roadmaps';
 import { Layout, Flex, Card } from '../src/components';
 
@@ -39,13 +40,24 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
       <Flex row center p={8}>
         {roadmaps &&
           roadmaps.map((roadmap) => (
-            <Card
-              key={roadmap._id}
-              title={roadmap.title}
-              description={roadmap.description}
-              href="/roadmaps/[name]"
-              as={`/roadmaps/${roadmap.name}`}
-            />
+            <Card key={roadmap._id}>
+              <CardActionArea>
+                <Link href="/roadmaps/[name]" as={`/roadmaps/${roadmap.name}`}>
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      {roadmap.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      {roadmap.description}
+                    </Typography>
+                  </CardContent>
+                </Link>
+              </CardActionArea>
+            </Card>
           ))}
       </Flex>
     </Layout>
