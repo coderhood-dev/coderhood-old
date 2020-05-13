@@ -21,10 +21,10 @@ const Footer = () => {
   return (
     <div className={styles.footerContainer}>
       <Flex>
-        <Typography variant="body2" color="inherit">
+        <Typography variant="body2" color="textSecondary">
           {`${process.env.APP_NAME} ${new Date().getFullYear()}`}
         </Typography>
-        <Typography variant="caption" color="inherit">
+        <Typography variant="caption" color="textSecondary">
           {`Made with 🦄 by ${process.env.APP_NAME} Team`}
         </Typography>
       </Flex>

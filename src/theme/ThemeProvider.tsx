@@ -18,7 +18,7 @@ export const themes: Themes = { light, dark };
 const ThemeContext: React.Context<IThemeContext> = React.createContext(null);
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(themes.dark);
+  const [theme, setTheme] = useState(themes.light);
   const themeContext: IThemeContext = {
     theme,
     switchTheme: () => {
