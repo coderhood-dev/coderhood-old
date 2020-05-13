@@ -4,7 +4,7 @@ interface Minimum {
   updatedAt: Date;
 }
 
-interface Subject extends Minimum {
+export interface Subject extends Minimum {
   name: string;
   title: string;
   description: string;
