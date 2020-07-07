@@ -32,8 +32,11 @@ const Header = () => {
           <Link href="/blog">
             <Button color="inherit">Blog</Button>
           </Link>
-          <Link href="/about">
-            <Button color="inherit">Nosotros</Button>
+          <Link href="/signin">
+            <Button color="inherit">Iniciar sesión</Button>
+          </Link>
+          <Link href="/signup">
+            <Button color="inherit">Registrate</Button>
           </Link>
         </Toolbar>
       </AppBar>
