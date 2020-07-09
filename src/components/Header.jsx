@@ -5,7 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import useDidScroll from '@hooks/useDidScroll';
+import { useDidScroll, useAuth } from '../hooks';
 
 const useStyles = makeStyles({
   container: {
@@ -20,6 +20,7 @@ const useStyles = makeStyles({
 const Header = () => {
   const styles = useStyles({});
   const didScroll = useDidScroll();
+  const { user, doSignOut } = useAuth();
   return (
     <div className={styles.container}>
       <AppBar position="fixed" color="primary" elevation={didScroll ? 2 : 0}>
@@ -32,12 +33,20 @@ const Header = () => {
           <Link href="/blog">
             <Button color="inherit">Blog</Button>
           </Link>
-          <Link href="/signin">
-            <Button color="inherit">Iniciar sesión</Button>
-          </Link>
-          <Link href="/signup">
-            <Button color="inherit">Registrate</Button>
-          </Link>
+          {user ? (
+            <Button color="inherit" onClick={doSignOut}>
+              Salir
+            </Button>
+          ) : (
+            <>
+              <Link href="/signin">
+                <Button color="inherit">Iniciar sesión</Button>
+              </Link>
+              <Link href="/signup">
+                <Button color="inherit">Registrate</Button>
+              </Link>
+            </>
+          )}
         </Toolbar>
       </AppBar>
     </div>

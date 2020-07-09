@@ -1,37 +1,29 @@
 import React, { useState } from 'react';
 import Router from 'next/router';
-import Link from 'next/link';
 import { FirebaseError } from 'firebase';
-import { Button, TextField } from '@material-ui/core';
 
-import { Layout, Flex, Card } from '../src/components';
-import { withFirebase } from '../firebase';
+import { Layout } from '../src/components';
+import { useAuth } from '../src/hooks';
 
 const SignInPage = () => (
-  <div>
+  <Layout>
     <h1>SignIn</h1>
     <SignInForm />
-  </div>
+  </Layout>
 );
 
-interface Props {
-  firebase: any;
-}
-
-const SignIn: React.FC<Props> = ({ firebase }) => {
+const SignIn: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<FirebaseError>(null);
+  const { doSignInWithEmailAndPassword } = useAuth();
 
   const onSubmit = (event) => {
-    firebase
-      .doSignInWithEmailAndPassword(email, password)
-      .then((authUser) => {
-        console.log('user: ', authUser);
+    doSignInWithEmailAndPassword(email, password)
+      .then(() => {
         Router.push('/');
       })
       .catch((e: FirebaseError) => {
-        console.log(e);
         setError(e);
       });
 
@@ -75,8 +67,6 @@ const SignIn: React.FC<Props> = ({ firebase }) => {
   );
 };
 
-const SignInForm = withFirebase(SignIn);
+const SignInForm = SignIn;
 
 export default SignInPage;
-
-export { SignInForm };

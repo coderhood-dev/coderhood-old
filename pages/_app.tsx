@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppProps } from 'next/app';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
-import Firebase, { FirebaseContext } from '../firebase';
+
+import { initAuth } from '../src/context/auth';
+import { AuthContext } from '../src/context';
 import ThemeContext, {
   ThemeProvider,
   IThemeContext,
 } from '../src/theme/ThemeProvider';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
-  React.useEffect(() => {
+  const [user, setUser] = useState<firebase.User>(null);
+  const auth = initAuth();
+
+  useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
@@ -16,14 +21,23 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
     }
   }, []);
 
+  useEffect(() => {
+    const removeListener = auth.onAuthStateChanged((authUser) => {
+      authUser ? setUser(authUser) : setUser(null);
+    });
+    return () => {
+      removeListener();
+    };
+  }, []);
+
   return (
     <ThemeProvider>
       <ThemeContext.Consumer>
         {(value: IThemeContext) => (
           <MuiThemeProvider theme={value.theme}>
-            <FirebaseContext.Provider value={new Firebase()}>
+            <AuthContext.Provider value={{ ...auth, user }}>
               <Component {...pageProps} />
-            </FirebaseContext.Provider>
+            </AuthContext.Provider>
           </MuiThemeProvider>
         )}
       </ThemeContext.Consumer>
