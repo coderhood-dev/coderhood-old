@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function useDidScroll() {
+export function useDidScroll() {
   const [didScroll, setDidScroll] = useState(false);
 
   useEffect(() => {
