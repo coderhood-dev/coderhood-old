@@ -16,7 +16,7 @@ const Layout: React.FC<Props> = ({ children, title }) => (
     <CssBaseline />
     <Head title={title} />
     <Header />
-    <Flex pt={16} p={8} flex={1}>
+    <Flex direction="column" pt={16} p={8} flex={1}>
       {children}
     </Flex>
     <ThemeContext.Consumer>

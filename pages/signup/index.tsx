@@ -1,18 +1,10 @@
 import React, { useState } from 'react';
 import { FirebaseError } from 'firebase';
-import { Formik, Form, Field, ErrorMessage, FormikProps } from 'formik';
 import Router from 'next/router';
-import { TextField } from '@material-ui/core';
-import validate from './validate';
+
 import { Layout } from '../../src/components';
 import { useAuth } from '../../src/hooks';
-
-const SignUpPage = () => (
-  <Layout>
-    <h1>SignUp</h1>
-    <SignUpForm />
-  </Layout>
-);
+import SignUpComponent from '../../src/components/Form/SignUpComponent';
 
 export interface IFormValues {
   firstName: string;
@@ -22,19 +14,11 @@ export interface IFormValues {
   passwordRepeat: string;
 }
 
-const SignUp: React.FC = () => {
+const SignUpPage: React.FC = () => {
   const { doCreateUserWithEmailAndPassword } = useAuth();
-  const [error, setError] = useState<FirebaseError>(null);
+  const [error, setError] = useState<FirebaseError>(null); // TODO: handle server error
 
-  const initialValues = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    passwordRepeat: '',
-  };
-
-  const onSubmit = (values) => {
+  const handleSubmit = (values) => {
     doCreateUserWithEmailAndPassword(values.email, values.password)
       .then(() => {
         Router.push('/');
@@ -45,35 +29,11 @@ const SignUp: React.FC = () => {
   };
 
   return (
-    <>
-      <Formik
-        initialValues={initialValues}
-        validate={validate}
-        onSubmit={onSubmit}
-      >
-        {(formikProps: FormikProps<IFormValues>) => (
-          <Form>
-            <Field type="text" name="firstName" component={TextField} />
-            <ErrorMessage name="firstName" component="div" />
-            <Field type="text" name="lastName" />
-            <ErrorMessage name="lastName" component="div" />
-            <Field type="email" name="email" />
-            <ErrorMessage name="email" component="div" />
-            <Field type="password" name="password" />
-            <ErrorMessage name="password" component="div" />
-            <Field type="password" name="passwordRepeat" />
-            <ErrorMessage name="passwordRepeat" component="div" />
-            <button type="submit" disabled={formikProps.isSubmitting}>
-              Submit
-            </button>
-          </Form>
-        )}
-      </Formik>
-      {error && <p>{error.message}</p>}
-    </>
+    <Layout>
+      <h1>SignUp</h1>
+      <SignUpComponent onSubmit={handleSubmit} />
+    </Layout>
   );
 };
-
-const SignUpForm = SignUp;
 
 export default SignUpPage;

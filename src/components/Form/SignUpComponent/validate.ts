@@ -7,6 +7,14 @@ export default function Validate(
 ) {
   const errors: FormikErrors<IFormValues> = {};
 
+  if (!values.firstName) {
+    errors.firstName = 'Required';
+  }
+
+  if (!values.lastName) {
+    errors.lastName = 'Required';
+  }
+
   if (!values.email) {
     errors.email = 'Required';
   } else if (
@@ -14,13 +22,15 @@ export default function Validate(
   ) {
     errors.email = 'Invalid email address';
   }
+
   if (!values.password) {
     errors.password = 'Required';
   } else if (
     values.password !== values.passwordRepeat
   ) {
-    errors.email = 'Passwords must match';
+    errors.password = 'Passwords must match';
   }
+
   return errors;
 
 }
