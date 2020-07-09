@@ -20,7 +20,7 @@ const Footer = () => {
   const styles = useStyles();
   return (
     <div className={styles.footerContainer}>
-      <Flex>
+      <Flex direction="column">
         <Typography variant="body2" color="textSecondary">
           {`${process.env.APP_NAME} ${new Date().getFullYear()}`}
         </Typography>

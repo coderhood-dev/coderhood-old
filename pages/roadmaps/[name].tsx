@@ -76,7 +76,7 @@ const Roadmap: React.FC<Props> = ({ roadmap }) => {
         {roadmap.description}
       </Typography>
       <Container>
-        <Flex paddingY={4}>
+        <Flex direction="column" paddingY={4}>
           {roadmap.subjects.map((subject: Subject) => {
             return (
               <Card key={subject._id} className={classes.root}>
@@ -102,7 +102,7 @@ const Roadmap: React.FC<Props> = ({ roadmap }) => {
                   >
                     {subject.description}
                   </Typography>
-                  <Flex row pt={4}>
+                  <Flex direction="row" pt={4}>
                     <AvatarGroup max={4}>
                       {[
                         { id: 0, name: 'A', color: colors.amber[500] },
@@ -111,12 +111,12 @@ const Roadmap: React.FC<Props> = ({ roadmap }) => {
                       ].map((person, i) => (
                         <Avatar
                           key={person.id}
-                          // style={{
-                          //   position: 'relative',
-                          //   left: -theme.spacing(i),
-                          //   color: theme.palette.getContrastText(person.color),
-                          //   backgroundColor: person.color,
-                          // }}
+                        // style={{
+                        //   position: 'relative',
+                        //   left: -theme.spacing(i),
+                        //   color: theme.palette.getContrastText(person.color),
+                        //   backgroundColor: person.color,
+                        // }}
                         >
                           {person.name}
                         </Avatar>
