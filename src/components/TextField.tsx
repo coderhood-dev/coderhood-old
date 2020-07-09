@@ -4,10 +4,11 @@ import { TextField as MaterialTextField } from '@material-ui/core';
 
 export interface IProps {
   name: string,
-  type?: string
+  type?: string,
+  placeholder?: string
 }
 
-const TextField = ({ name, type }: IProps) => (
+const TextField = ({ name, type, placeholder }: IProps) => (
   <Field
     validateOnBlur
     validateOnChange
@@ -16,6 +17,7 @@ const TextField = ({ name, type }: IProps) => (
     {({ field, form }) => (
       <MaterialTextField
         name={name}
+        placeholder={placeholder}
         type={type || "text"}
         error={
           Boolean(form.errors[name] && form.touched[name])
