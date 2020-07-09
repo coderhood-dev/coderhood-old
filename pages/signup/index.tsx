@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { FirebaseError } from 'firebase';
-import { Formik, Form, Field, ErrorMessage, FormikProps } from "formik";
+import { Formik, Form, FormikProps } from "formik";
 import Router from 'next/router';
 import Link from 'next/link';
-import { Button, TextField } from '@material-ui/core';
+import { Button } from '@material-ui/core';
+
 import validate from "./validate";
-import { Layout, Flex, Card } from '../../src/components';
+
+import { Layout, Flex } from '../../src/components';
 import { withFirebase } from '../../firebase';
+import TextField from '../../src/components/TextField';
 
 const SignUpPage = () => (
   <Layout>
@@ -51,29 +54,28 @@ const SignUp: React.FC<Props> = ({ firebase }) => {
   };
 
   return (
-    <Formik
-    initialValues={initialValues}
-    validate={validate}
-    onSubmit={onSubmit}
-  >
-    {(formikProps: FormikProps<IFormValues>) => (
-      <Form>
-        <Field type="text" name="firstName" />
-        <ErrorMessage name="firstName" component="div" />
-        <Field type="text" name="lastName" />
-        <ErrorMessage name="lastName" component="div" />
-        <Field type="email" name="email" />
-        <ErrorMessage name="email" component="div" />
-        <Field type="password" name="password" />
-        <ErrorMessage name="password" component="div" />
-        <Field type="password" name="passwordRepeat" />
-        <ErrorMessage name="passwordRepeat" component="div" />
-        <button type="submit" disabled={formikProps.isSubmitting}>
-          Submit
-        </button>
-      </Form>
-    )}
-  </Formik>
+    
+      <Formik
+      initialValues={initialValues}
+      validate={validate}
+      onSubmit={onSubmit}
+    >
+      {(formikProps: FormikProps<IFormValues>) => (
+        <Form>
+          <Flex direction="column">
+            <TextField name="firstName" />
+            <TextField name="lastName" />
+            <TextField name="email" type="email" />
+            <TextField name="password" type="password" />
+            <TextField name="passwordRepeat" type="password" />
+
+            <button type="submit" disabled={formikProps.isSubmitting}>
+              Submit
+            </button>
+          </Flex>
+        </Form>
+      )}
+    </Formik>
   );
 };
 
@@ -91,3 +93,4 @@ const SignUpLink = () => (
 export default SignUpPage;
 
 export { SignUpForm, SignUpLink }; // TODO: maybe it's not needed to export this
+

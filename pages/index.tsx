@@ -37,7 +37,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
           Elige un camino
         </Typography>
       </Flex>
-      <Flex row center p={8}>
+      <Flex direction="column" center p={8}>
         {roadmaps &&
           roadmaps.map((roadmap) => (
             <Card key={roadmap._id}>
