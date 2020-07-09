@@ -23,7 +23,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
   return (
     <Layout>
       <Container>
-        <Flex width="50%">
+        <Flex direction="column" width="50%">
           <Typography variant="h1" color="inherit" gutterBottom>
             Todos pueden programar, aprendamos juntos.
           </Typography>
@@ -32,12 +32,12 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
           </Typography>
         </Flex>
       </Container>
-      <Flex alignItems="flex-end" pr={16}>
+      <Flex direction="column" alignItems="flex-end" pr={16}>
         <Typography variant="h4" color="inherit">
           Elige un camino
         </Typography>
       </Flex>
-      <Flex direction="column" center p={8}>
+      <Flex direction="row" center p={8}>
         {roadmaps &&
           roadmaps.map((roadmap) => (
             <Card key={roadmap._id}>

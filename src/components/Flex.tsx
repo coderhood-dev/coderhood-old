@@ -1,7 +1,7 @@
 import Box, { BoxProps } from '@material-ui/core/Box';
 
 interface ComponentProps {
-  direction?: string;
+  direction: "column" | "row";
   center?: boolean;
 }
 
@@ -15,7 +15,7 @@ const Flex: React.ComponentType<Props> = ({
 }) => (
     <Box
       display="flex"
-      flexDirection={direction || 'column'}
+      flexDirection={direction}
       justifyContent={center ? 'center' : 'flex-start'}
       alignItems={center ? 'center' : 'flex-start'}
       width="100%"
