@@ -4,9 +4,9 @@ import Router from 'next/router';
 import Link from 'next/link';
 import { Button } from '@material-ui/core';
 
-import { Layout } from '../../src/components';
-import { withFirebase } from '../../firebase';
-import SignUpComponent from '../../src/components/Form/SignUpComponent';
+import { Layout } from '../src/components';
+import { withFirebase } from '../firebase';
+import SignUpComponent from '../src/components/Form/SignUpComponent';
 
 const SignUpPage = () => (
   <Layout>
