@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { FirebaseError } from 'firebase';
 import Router from 'next/router';
 
-import { Layout } from '../../src/components';
-import { useAuth } from '../../src/hooks';
-import SignUpComponent from '../../src/components/Form/SignUpComponent';
+import { Layout } from '../src/components';
+import { useAuth } from '../src/hooks';
+import SignUpComponent from '../src/components/Form/SignUpComponent';
 
 export interface IFormValues {
   firstName: string;
