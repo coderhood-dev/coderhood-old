@@ -3,15 +3,14 @@ import { AppProps } from 'next/app';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
 
 import { initAuth } from '../src/context/auth';
-import { AuthContext } from '../src/context';
-import ThemeContext, {
-  ThemeProvider,
-  IThemeContext,
-} from '../src/theme/ThemeProvider';
+import { IThemeContext, themes } from '../src/context/theme';
+import { AuthContext, ThemeContext } from '../src/context';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   const [user, setUser] = useState<firebase.User>(null);
   const auth = initAuth();
+
+  const [theme, setTheme] = useState(themes.light);
 
   useEffect(() => {
     // Remove the server-side injected CSS.
@@ -30,18 +29,21 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
     };
   }, []);
 
+  const themeContext: IThemeContext = {
+    theme,
+    switchTheme: () => {
+      setTheme(theme.palette.type === 'dark' ? themes.light : themes.dark);
+    },
+  };
+
   return (
-    <ThemeProvider>
-      <ThemeContext.Consumer>
-        {(value: IThemeContext) => (
-          <MuiThemeProvider theme={value.theme}>
-            <AuthContext.Provider value={{ ...auth, user }}>
-              <Component {...pageProps} />
-            </AuthContext.Provider>
-          </MuiThemeProvider>
-        )}
-      </ThemeContext.Consumer>
-    </ThemeProvider>
+    <ThemeContext.Provider value={themeContext}>
+      <MuiThemeProvider theme={themeContext.theme}>
+        <AuthContext.Provider value={{ ...auth, user }}>
+          <Component {...pageProps} />
+        </AuthContext.Provider>
+      </MuiThemeProvider>
+    </ThemeContext.Provider>
   );
 };
 

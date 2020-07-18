@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box, CssBaseline } from '@material-ui/core';
-import Head from './Head';
-import { Header, Footer, Flex } from '.';
-
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
-import ThemeContext, { themes } from '../theme/ThemeProvider';
+
+import Head from './Head';
+import { Header, Footer, Flex } from './';
+import { themes } from '../../src/context/theme';
 
 interface Props {
   children: React.ReactNode;
@@ -19,13 +19,9 @@ const Layout: React.FC<Props> = ({ children, title }) => (
     <Flex direction="column" pt={16} p={8} flex={1}>
       {children}
     </Flex>
-    <ThemeContext.Consumer>
-      {() => (
-        <MuiThemeProvider theme={themes.dark}>
-          <Footer />
-        </MuiThemeProvider>
-      )}
-    </ThemeContext.Consumer>
+    <MuiThemeProvider theme={themes.dark}>
+      <Footer />
+    </MuiThemeProvider>
   </Box>
 );
 

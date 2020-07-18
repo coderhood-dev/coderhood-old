@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import Icon from '@material-ui/core/Icon';
-import ThemeContext from '@theme/ThemeProvider';
+import { ThemeContext } from '../context';
 
 const ThemeSwitcher = () => {
   const { switchTheme } = useContext(ThemeContext);
