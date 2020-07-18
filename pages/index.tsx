@@ -28,7 +28,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
             Todos pueden programar, aprendamos juntos.
           </Typography>
           <Typography variant="subtitle1" color="inherit">
-            {`${process.env.APP_NAME} es la plataforma open source que impulsa el aprendizaje colaborativo y continuo.`}
+            {`${process.env.NEXT_PUBLIC_APP_NAME} es la plataforma open source que impulsa el aprendizaje colaborativo y continuo.`}
           </Typography>
         </Flex>
       </Container>

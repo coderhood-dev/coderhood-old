@@ -27,17 +27,13 @@ const Header = () => {
         <Toolbar>
           <Link href="/">
             <Typography variant="h6" color="inherit" className={styles.title}>
-              {process.env.APP_NAME}
+              {process.env.NEXT_PUBLIC_APP_NAME}
             </Typography>
           </Link>
           <Link href="/blog">
             <Button color="inherit">Blog</Button>
           </Link>
-          {user ? (
-            <Button color="inherit" onClick={doSignOut}>
-              Salir
-            </Button>
-          ) : (
+          {!user ? (
             <>
               <Link href="/signin">
                 <Button color="inherit">Iniciar sesión</Button>
@@ -46,6 +42,10 @@ const Header = () => {
                 <Button color="inherit">Registrate</Button>
               </Link>
             </>
+          ) : (
+            <Button color="inherit" onClick={doSignOut}>
+              Salir
+            </Button>
           )}
         </Toolbar>
       </AppBar>

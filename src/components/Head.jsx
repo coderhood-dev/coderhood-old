@@ -23,7 +23,7 @@ Head.propTypes = {
 };
 
 Head.defaultProps = {
-  title: process.env.APP_NAME,
+  title: process.env.NEXT_PUBLIC_APP_NAME,
   description: '',
   url: '',
   ogImage: '',

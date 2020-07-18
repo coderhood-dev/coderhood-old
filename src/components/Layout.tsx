@@ -30,7 +30,7 @@ const Layout: React.FC<Props> = ({ children, title }) => (
 );
 
 Layout.defaultProps = {
-  title: process.env.APP_NAME,
+  title: process.env.NEXT_PUBLIC_APP_NAME,
 };
 
 export default Layout;

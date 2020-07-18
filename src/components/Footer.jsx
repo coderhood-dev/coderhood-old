@@ -22,10 +22,10 @@ const Footer = () => {
     <div className={styles.footerContainer}>
       <Flex direction="column">
         <Typography variant="body2" color="textSecondary">
-          {`${process.env.APP_NAME} ${new Date().getFullYear()}`}
+          {`${process.env.NEXT_PUBLIC_APP_NAME} ${new Date().getFullYear()}`}
         </Typography>
         <Typography variant="caption" color="textSecondary">
-          {`Made with 🦄 by ${process.env.APP_NAME} Team`}
+          {`Made with 🦄 by ${process.env.NEXT_PUBLIC_APP_NAME} Team`}
         </Typography>
       </Flex>
       <SocialIcons />
