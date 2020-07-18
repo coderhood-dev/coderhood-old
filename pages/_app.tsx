@@ -18,9 +18,8 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
-  }, []);
 
-  useEffect(() => {
+    // Firebase's authentification listener which updated useAuth state
     const removeListener = auth.onAuthStateChanged((authUser) => {
       authUser ? setUser(authUser) : setUser(null);
     });
