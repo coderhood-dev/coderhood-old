@@ -1,24 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { AppProps } from 'next/app';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
+import { ThemeProvider, CSSReset, ColorModeProvider } from '@chakra-ui/core';
 
 import { initAuth } from '../src/context/auth';
-import { IThemeContext, themes } from '../src/context/theme';
-import { AuthContext, ThemeContext } from '../src/context';
+import { AuthContext } from '../src/context';
+
+const auth = initAuth(); // TODO: test this move
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   const [user, setUser] = useState<firebase.User>(null);
-  const auth = initAuth();
-
-  const [theme, setTheme] = useState(themes.light);
 
   useEffect(() => {
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
-    }
-
     // Firebase's authentification listener which updated useAuth state
     const removeListener = auth.onAuthStateChanged((authUser) => {
       authUser ? setUser(authUser) : setUser(null);
@@ -28,21 +20,15 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
     };
   }, []);
 
-  const themeContext: IThemeContext = {
-    theme,
-    switchTheme: () => {
-      setTheme(theme.palette.type === 'dark' ? themes.light : themes.dark);
-    },
-  };
-
   return (
-    <ThemeContext.Provider value={themeContext}>
-      <MuiThemeProvider theme={themeContext.theme}>
+    <ThemeProvider>
+      <CSSReset />
+      <ColorModeProvider>
         <AuthContext.Provider value={{ ...auth, user }}>
           <Component {...pageProps} />
         </AuthContext.Provider>
-      </MuiThemeProvider>
-    </ThemeContext.Provider>
+      </ColorModeProvider>
+    </ThemeProvider>
   );
 };
 

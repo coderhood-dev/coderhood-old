@@ -58,7 +58,13 @@ const SignIn: React.FC = () => {
         type="password"
         placeholder="Password"
       />
-      <button disabled={isInvalid} type="submit">
+      <button
+        disabled={isInvalid}
+        type="submit"
+        style={{
+          margin: 100,
+        }}
+      >
         Sign In
       </button>
 

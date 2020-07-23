@@ -20,13 +20,7 @@ import {
   Typography,
   Container,
 } from '@material-ui/core';
-import {
-  Favorite as FavoriteIcon,
-  Share as ShareIcon,
-  ExpandMore as ExpandMoreIcon,
-} from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
-import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
 interface Props {
   roadmap: GetRoadmapResponse;
@@ -103,7 +97,7 @@ const Roadmap: React.FC<Props> = ({ roadmap }) => {
                     {subject.description}
                   </Typography>
                   <Flex direction="row" pt={4}>
-                    <AvatarGroup max={4}>
+                    {/* <AvatarGroup max={4}>
                       {[
                         { id: 0, name: 'A', color: colors.amber[500] },
                         { id: 1, name: 'E', color: colors.indigo[500] },
@@ -121,17 +115,17 @@ const Roadmap: React.FC<Props> = ({ roadmap }) => {
                           {person.name}
                         </Avatar>
                       ))}
-                    </AvatarGroup>
+                    </AvatarGroup> */}
                   </Flex>
                 </CardContent>
                 <CardActions disableSpacing>
-                  <IconButton aria-label="add to favorites">
+                  {/* <IconButton aria-label="add to favorites">
                     <FavoriteIcon />
                   </IconButton>
                   <IconButton aria-label="share">
                     <ShareIcon />
-                  </IconButton>
-                  <IconButton
+                  </IconButton> */}
+                  {/* <IconButton
                     className={clsx(classes.expand, {
                       [classes.expandOpen]: expanded,
                     })}
@@ -140,7 +134,7 @@ const Roadmap: React.FC<Props> = ({ roadmap }) => {
                     aria-label="show more"
                   >
                     <ExpandMoreIcon />
-                  </IconButton>
+                  </IconButton> */}
                 </CardActions>
                 <Collapse in={expanded} timeout="auto" unmountOnExit>
                   <CardContent>

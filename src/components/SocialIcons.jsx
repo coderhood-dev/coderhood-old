@@ -1,17 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
-import IconButton from '@material-ui/core/IconButton';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
-
-const SocialIconsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
+import { Flex } from '@chakra-ui/core';
+import { Icon } from '@chakra-ui/core';
 
 const SocialIcons = () => (
-  <SocialIconsContainer>
-    <IconButton target="_blank" href="https://github.com/emaLorenzo">
+  <Flex direction="row">
+    <Icon name="check-circle" size="24px" />
+    <Icon name="check-circle" size="24px" />
+    <Icon name="check-circle" size="24px" />
+    <Icon name="check-circle" size="24px" />
+    {/* TODO: change this */}
+    {/* <IconButton target="_blank" href="https://github.com/emaLorenzo">
       <FontAwesomeIcon icon={faGithub} />
     </IconButton>
     <IconButton target="_blank" href="https://www.linkedin.com/in/emanuellorenzo">
@@ -22,8 +20,8 @@ const SocialIcons = () => (
     </IconButton>
     <IconButton target="_blank" href="https://www.facebook.com/aemalorenzo">
       <FontAwesomeIcon icon={faFacebook} />
-    </IconButton>
-  </SocialIconsContainer>
+    </IconButton> */}
+  </Flex>
 );
 
 export default SocialIcons;
