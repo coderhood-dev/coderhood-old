@@ -1,37 +1,44 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Theme } from '@material-ui/core/styles/createMuiTheme';
-import Card, { CardProps } from '@material-ui/core/Card';
-import clsx from 'clsx';
+import React, { PropsWithChildren } from 'react';
+import { Flex } from '@chakra-ui/core';
+import { motion } from 'framer-motion';
+import styled from '@emotion/styled';
 
-interface ComponentProps {
-  children: React.ReactNode;
+interface Props {
+  styles?: any;
 }
 
-type Props = CardProps & ComponentProps;
+const AnimatedContainer = styled(motion.div)`
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: black;
+`;
 
-const useStyles = makeStyles((theme: Theme) => ({
-  card: {
-    minWidth: '25%',
-    margin: theme.spacing(2),
-  },
-}));
-
-const CardComponent: React.FC<Props> = ({ children, className }) => {
-  const styles = useStyles({});
-  const [raised, setRaised] = React.useState(false);
-  const toogleRaised = () => {
-    setRaised(!raised);
+const CardComponent: React.FC<PropsWithChildren<Props>> = ({
+  styles,
+  children,
+}) => {
+  const variants = {
+    hover: {
+      boxShadow: '10px 10px 0px 0px rgba(0,0,0,1)',
+      translateY: -10,
+      translateX: -10,
+    },
+    tap: {
+      scale: 0.98,
+      boxShadow: '10px 10px 0px 0px rgba(0,0,0,1)',
+      translateY: -10,
+      translateX: -10,
+    },
   };
   return (
-    <Card
-      className={clsx(styles.card, className)}
-      onMouseEnter={toogleRaised}
-      onMouseLeave={toogleRaised}
-      elevation={raised ? 3 : 1}
+    <AnimatedContainer
+      whileHover="hover"
+      whileTap="tap"
+      variants={variants}
+      style={styles}
     >
-      {children}
-    </Card>
+      <Flex bg="green.300">{children}</Flex>
+    </AnimatedContainer>
   );
 };
 

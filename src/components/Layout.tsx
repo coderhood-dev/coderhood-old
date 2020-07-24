@@ -12,7 +12,7 @@ const Layout: React.FC<PropsWithChildren<Props>> = ({ children, title }) => (
   <Flex direction="column" minHeight="100vh">
     <Head title={title} />
     <Header />
-    <Flex direction="column" flex={1}>
+    <Flex direction="column" flex={1} alignItems="center" bg="orange">
       {children}
     </Flex>
     <Footer />
