@@ -1,6 +1,5 @@
 import React from 'react';
-import { Flex } from '@chakra-ui/core';
-import { Icon } from '@chakra-ui/core';
+import { Flex, Icon } from '@chakra-ui/core';
 
 const SocialIcons = () => (
   <Flex direction="row">

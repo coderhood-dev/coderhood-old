@@ -1,36 +1,34 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
 import SocialIcons from './SocialIcons';
-import { Flex, ThemeSwitcher } from './';
+import styled from '@emotion/styled';
+import { ThemeSwitcher } from './';
+import { Text, Flex } from "@chakra-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-  footerContainer: {
-    width: '100%',
-    padding: '40px 80px',
-    backgroundColor: theme.palette.primary.main,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-}));
+const FooterContainer = styled.div`
+  width: 100%;
+  padding: 40px 80px;
+  background-color: blue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`
 
 const Footer = () => {
-  const styles = useStyles();
+
   return (
-    <div className={styles.footerContainer}>
+    <FooterContainer>
       <Flex direction="column">
-        <Typography variant="body2" color="textSecondary">
+        <Text color="gray.800">
           {`${process.env.NEXT_PUBLIC_APP_NAME} ${new Date().getFullYear()}`}
-        </Typography>
-        <Typography variant="caption" color="textSecondary">
+        </Text>
+        <Text color="gray.800">
           {`Made with 🦄 by ${process.env.NEXT_PUBLIC_APP_NAME} Team`}
-        </Typography>
+        </Text>
       </Flex>
       <SocialIcons />
       <ThemeSwitcher />
-    </div>
+    </FooterContainer>
   );
 };
 

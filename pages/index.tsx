@@ -2,10 +2,10 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { Typography, CardActionArea, CardContent } from '@material-ui/core';
-import { Heading, Text } from '@chakra-ui/core';
+import { Heading, Text, Flex, Avatar, Box } from '@chakra-ui/core';
+import { motion } from 'framer-motion';
 import { getRoadmaps, GetRoadmapsResponse } from '../src/api/roadmaps';
-import { Layout, Flex, Card } from '../src/components';
+import { Layout, Card } from '../src/components';
 import { useAuth } from '../src/hooks';
 
 interface Props {
@@ -27,43 +27,45 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
   return (
     <Layout>
       <Hero>
-        <Flex direction="column" width="50%">
-          <Heading size="2xl" fontFamily="Lato">
-            Todos pueden programar, aprendamos juntos.
-          </Heading>
-          <Text>
-            {`${process.env.NEXT_PUBLIC_APP_NAME} es la plataforma open source que impulsa el aprendizaje colaborativo y continuo.`}
-          </Text>
-          <Heading size="md" fontFamily="Lato">
-            {user && user.email}
-          </Heading>
+        <Flex direction="row" width="100%">
+          <Flex direction="column" flex={1}>
+            <Heading size="2xl" fontFamily="Lato">
+              Todos pueden programar, aprendamos juntos.
+            </Heading>
+            <Text>
+              {`${process.env.NEXT_PUBLIC_APP_NAME} es la plataforma open source que impulsa el aprendizaje colaborativo y continuo.`}
+            </Text>
+            <Heading size="md" fontFamily="Lato">
+              {user && user.email}
+            </Heading>
+          </Flex>
+          <Flex direction="column" flex={1}>
+            <motion.div
+              animate={{ y: 15 }}
+              transition={{
+                flip: Infinity,
+                ease: 'easeInOut',
+                duration: 1,
+              }}
+              whileHover={{
+                scale: 1.02,
+              }}
+            >
+              <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" />
+            </motion.div>
+          </Flex>
         </Flex>
       </Hero>
-      <Flex direction="column" alignItems="flex-end" pr={16}>
-        <Typography variant="h4" color="inherit">
-          Elige un camino
-        </Typography>
-      </Flex>
-      <Flex direction="row" center p={8}>
+      <Flex direction="row" p={8}>
         {roadmaps &&
           roadmaps.map((roadmap) => (
-            <Card key={roadmap._id}>
-              <CardActionArea>
-                <Link href="/roadmaps/[name]" as={`/roadmaps/${roadmap.name}`}>
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {roadmap.title}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      {roadmap.description}
-                    </Typography>
-                  </CardContent>
-                </Link>
-              </CardActionArea>
+            <Card key={roadmap._id} styles={{ margin: 20 }}>
+              <Link href="/roadmaps/[name]" as={`/roadmaps/${roadmap.name}`}>
+                <Box p={4}>
+                  <Heading as="h3">{roadmap.title}</Heading>
+                  <Text>{roadmap.description}</Text>
+                </Box>
+              </Link>
             </Card>
           ))}
       </Flex>

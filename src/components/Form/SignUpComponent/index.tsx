@@ -1,20 +1,20 @@
 import React from 'react';
-import { Formik, Form, FormikProps } from "formik";
+import { Formik, Form, FormikProps } from 'formik';
 
-import validate from "./validate";
-
-import { Flex, TextField } from '../../'
+import validate from './validate';
+import { Flex } from '@chakra-ui/core';
+import { TextField } from '../../';
 
 export interface IProps {
-  onSubmit: (values: IFormValues) => void
+  onSubmit: (values: IFormValues) => void;
 }
 
 export interface IFormValues {
-  firstName: string,
-  lastName: string,
-  email: string,
-  password: string,
-  passwordRepeat: string
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  passwordRepeat: string;
 }
 
 const initialValues = {
@@ -22,15 +22,11 @@ const initialValues = {
   lastName: '',
   email: '',
   password: '',
-  passwordRepeat: ''
-}
+  passwordRepeat: '',
+};
 
 const SignUpComponent = ({ onSubmit }: IProps) => (
-  <Formik
-    initialValues={initialValues}
-    validate={validate}
-    onSubmit={onSubmit}
-  >
+  <Formik initialValues={initialValues} validate={validate} onSubmit={onSubmit}>
     {(formikProps: FormikProps<IFormValues>) => (
       <Form>
         <Flex direction="column">
@@ -38,15 +34,19 @@ const SignUpComponent = ({ onSubmit }: IProps) => (
           <TextField name="lastName" placeholder="Last name" />
           <TextField name="email" type="email" placeholder="Email" />
           <TextField name="password" type="password" placeholder="Password" />
-          <TextField name="passwordRepeat" type="password" placeholder="Repeat password" />
+          <TextField
+            name="passwordRepeat"
+            type="password"
+            placeholder="Repeat password"
+          />
 
           <button type="submit" disabled={formikProps.isSubmitting}>
             Submit
-            </button>
+          </button>
         </Flex>
       </Form>
     )}
   </Formik>
-)
+);
 
 export default SignUpComponent;
