@@ -1,14 +1,14 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
+import { Text } from "@chakra-ui/core";
 import Link from 'next/link';
 import matter from 'gray-matter';
 import { Layout } from '../src/components';
 
 const Blog = ({ posts }) => (
   <Layout>
-    <Typography variant="h1" color="inherit">
+    <Text fontSize="6xl" color="inherit">
       Blog
-    </Typography>
+    </Text>
     <section>
       {posts.map((post) => (
         <Link key={post.slug} href={{ pathname: `/blog/${post.slug}` }}>

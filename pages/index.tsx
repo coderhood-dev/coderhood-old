@@ -2,8 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { CardContent } from '@material-ui/core';
-import { Heading, Text, Flex, Avatar } from '@chakra-ui/core';
+import { Heading, Text, Flex, Avatar, Box } from '@chakra-ui/core';
 import { motion } from 'framer-motion';
 import { getRoadmaps, GetRoadmapsResponse } from '../src/api/roadmaps';
 import { Layout, Card } from '../src/components';
@@ -62,10 +61,10 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
           roadmaps.map((roadmap) => (
             <Card key={roadmap._id} styles={{ margin: 20 }}>
               <Link href="/roadmaps/[name]" as={`/roadmaps/${roadmap.name}`}>
-                <CardContent>
+                <Box p={4}>
                   <Heading as="h3">{roadmap.title}</Heading>
                   <Text>{roadmap.description}</Text>
-                </CardContent>
+                </Box>
               </Link>
             </Card>
           ))}

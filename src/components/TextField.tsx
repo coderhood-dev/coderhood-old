@@ -1,38 +1,27 @@
 import React from 'react';
-import { Field } from "formik";
-import { TextField as MaterialTextField } from '@material-ui/core';
+import { Field } from 'formik';
+import { Input } from '@chakra-ui/core';
 
 export interface IProps {
-  name: string,
-  type?: string,
-  placeholder?: string
+  name: string;
+  type?: string;
+  placeholder?: string;
 }
 
 const TextField = ({ name, type, placeholder }: IProps) => (
-  <Field
-    validateOnBlur
-    validateOnChange
-    name={name}
-  >
+  <Field validateOnBlur validateOnChange name={name}>
     {({ field, form }) => (
-      <MaterialTextField
+      <Input
         name={name}
         placeholder={placeholder}
-        type={type || "text"}
-        error={
-          Boolean(form.errors[name] && form.touched[name])
-        }
+        type={type || 'text'}
+        isInvalid={Boolean(form.errors[name] && form.touched[name])}
+        errorBorderColor="red.300"
         onChange={field.onChange}
         onBlur={field.onBlur}
-        helperText={
-          form.errors[name] &&
-          form.touched[name] &&
-          String(form.errors[name])
-        }
       />
-    )
-    }
+    )}
   </Field>
-)
+);
 
-export default TextField
+export default TextField;
