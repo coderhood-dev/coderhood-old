@@ -7,10 +7,10 @@ import {
   GetRoadmapResponse,
   Subject,
 } from '../../src/api/roadmaps';
-import { Layout, Card, Flex } from '../../src/components';
+import { Layout, Card } from '../../src/components';
 
 import clsx from 'clsx';
-import { Text, Box, Avatar, Collapse } from '@chakra-ui/core';
+import { Text, Box, Avatar, Collapse, Flex } from '@chakra-ui/core';
 
 interface Props {
   roadmap: GetRoadmapResponse;

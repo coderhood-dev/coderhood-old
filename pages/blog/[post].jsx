@@ -1,7 +1,6 @@
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
+import { Text, IconButton } from '@chakra-ui/core';
 
 import { Layout } from '../../src/components';
 
@@ -9,14 +8,14 @@ export default function BlogTemplate({ content: markdownBody, data: frontmatter,
   return (
     <Layout>
       <IconButton
+        icon="search"
         target="_blank"
         href={`https://github.com/coderhooddev/coderhood/blob/master/posts/${post}.md`}
-      >
-      </IconButton>
+      />
       <article>
-        <Typography variant="h3" color="inherit">
+        <Text fontSize="3xl" color="inherit">
           {frontmatter.title}
-        </Typography>
+        </Text>
         <div>
           <ReactMarkdown source={markdownBody} />
         </div>
