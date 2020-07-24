@@ -1,28 +1,22 @@
-import React from 'react';
-import { Box, CssBaseline } from '@material-ui/core';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
+import React, { PropsWithChildren } from 'react';
+import { Flex } from '@chakra-ui/core';
 
 import Head from './Head';
-import { Header, Footer, Flex } from './';
-import { themes } from '../../src/context/theme';
+import { Header, Footer } from './';
 
 interface Props {
-  children: React.ReactNode;
   title?: string;
 }
 
-const Layout: React.FC<Props> = ({ children, title }) => (
-  <Box minHeight="100vh" display="flex" flexDirection="column">
-    <CssBaseline />
+const Layout: React.FC<PropsWithChildren<Props>> = ({ children, title }) => (
+  <Flex direction="column" minHeight="100vh">
     <Head title={title} />
     <Header />
-    <Flex direction="column" pt={16} p={8} flex={1}>
+    <Flex direction="column" flex={1}>
       {children}
     </Flex>
-    <MuiThemeProvider theme={themes.dark}>
-      <Footer />
-    </MuiThemeProvider>
-  </Box>
+    <Footer />
+  </Flex>
 );
 
 Layout.defaultProps = {

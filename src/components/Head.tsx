@@ -1,8 +1,14 @@
 import React from 'react';
 import NextHead from 'next/head';
-import { string } from 'prop-types';
 
-const Head = ({ title, description, url, ogImage }) => (
+interface Props {
+  title?: string;
+  description?: string;
+  url?: string;
+  ogImage?: string;
+}
+
+const Head: React.FC<Props> = ({ title, description, url, ogImage }) => (
   <NextHead>
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -14,19 +20,5 @@ const Head = ({ title, description, url, ogImage }) => (
     <meta name="twitter:image" content={ogImage} />
   </NextHead>
 );
-
-Head.propTypes = {
-  title: string,
-  description: string,
-  url: string,
-  ogImage: string,
-};
-
-Head.defaultProps = {
-  title: process.env.NEXT_PUBLIC_APP_NAME,
-  description: '',
-  url: '',
-  ogImage: '',
-};
 
 export default Head;

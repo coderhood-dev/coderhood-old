@@ -2,8 +2,6 @@ import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { Layout } from '../../src/components';
 
@@ -14,7 +12,6 @@ export default function BlogTemplate({ content: markdownBody, data: frontmatter,
         target="_blank"
         href={`https://github.com/coderhooddev/coderhood/blob/master/posts/${post}.md`}
       >
-        <FontAwesomeIcon icon={faGithub} />
       </IconButton>
       <article>
         <Typography variant="h3" color="inherit">
