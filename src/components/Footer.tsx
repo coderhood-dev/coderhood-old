@@ -1,8 +1,8 @@
 import React from 'react';
 import SocialIcons from './SocialIcons';
 import styled from '@emotion/styled';
-import { ThemeSwitcher } from './';
-import { Text, Flex } from "@chakra-ui/core";
+import { ThemeSwitcher } from '.';
+import { Text, Flex } from '@chakra-ui/core';
 
 const FooterContainer = styled.div`
   width: 100%;
@@ -12,10 +12,9 @@ const FooterContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-`
+`;
 
 const Footer = () => {
-
   return (
     <FooterContainer>
       <Flex direction="column">
