@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from "@chakra-ui/core";
+import { Text } from '@chakra-ui/core';
 import Link from 'next/link';
 import matter from 'gray-matter';
 import { Layout } from '../src/components';
@@ -45,6 +45,7 @@ Blog.getInitialProps = () => {
     });
     // return all the posts
     return data;
+    // @ts-ignore
   })(require.context('../posts', true, /\.md$/));
 
   return { posts };
