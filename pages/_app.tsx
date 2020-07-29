@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { AppProps } from 'next/app';
 import { ThemeProvider, CSSReset, ColorModeProvider } from '@chakra-ui/core';
 
+import '@material/react-text-field/dist/text-field.css';
+
 import { initAuth } from '../src/context/auth';
 import { AuthContext } from '../src/context';
 
