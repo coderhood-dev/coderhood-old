@@ -4,13 +4,18 @@ import { Text, IconButton } from '@chakra-ui/core';
 
 import { Layout } from '../../src/components';
 
-export default function BlogTemplate({ content: markdownBody, data: frontmatter, post }) {
+export default function BlogTemplate({
+  content: markdownBody,
+  data: frontmatter,
+  post,
+}) {
   return (
     <Layout>
       <IconButton
+        aria-label="Search database"
         icon="search"
-        target="_blank"
-        href={`https://github.com/coderhooddev/coderhood/blob/master/posts/${post}.md`}
+        //target="_blank"
+        //href={`https://github.com/coderhooddev/coderhood/blob/master/posts/${post}.md`}
       />
       <article>
         <Text fontSize="3xl" color="inherit">
