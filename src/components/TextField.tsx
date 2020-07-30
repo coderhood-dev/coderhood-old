@@ -3,11 +3,6 @@ import { Field, ErrorMessage } from 'formik';
 import TextField, { Input } from '@material/react-text-field';
 import styled from '@emotion/styled';
 
-const TextFieldCustom = styled(TextField)`
-  margin: 2px 0;
-  width: 300px;
-`;
-
 const ErrorMessageCustom = styled(ErrorMessage)`
   font-size: 12px;
   padding-left: 10px;
@@ -24,7 +19,7 @@ const TextFieldInput = ({ name, type, placeholder }: IProps) => (
   <Field validateOnBlur validateOnChange name={name}>
     {({ field, form }) => (
       <>
-        <TextFieldCustom label={placeholder}>
+        <TextField label={placeholder}>
           <Input
             type={type || 'text'}
             name={name}
@@ -32,7 +27,7 @@ const TextFieldInput = ({ name, type, placeholder }: IProps) => (
             onChange={field.onChange}
             value={field.value}
           />
-        </TextFieldCustom>
+        </TextField>
         <ErrorMessageCustom component="span" name={name} />
       </>
     )}

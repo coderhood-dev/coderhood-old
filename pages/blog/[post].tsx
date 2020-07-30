@@ -1,6 +1,6 @@
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
-import { Text, IconButton } from '@chakra-ui/core';
+import { Text, Button, Icon } from '@chakra-ui/core';
 
 import { Layout } from '../../src/components';
 
@@ -11,12 +11,9 @@ export default function BlogTemplate({
 }) {
   return (
     <Layout>
-      <IconButton
-        aria-label="Search database"
-        icon="search"
-        //target="_blank"
-        //href={`https://github.com/coderhooddev/coderhood/blob/master/posts/${post}.md`}
-      />
+      <Button variantColor="teal" size="sm">
+        <Icon name="search" />
+      </Button>
       <article>
         <Text fontSize="3xl" color="inherit">
           {frontmatter.title}
