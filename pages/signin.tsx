@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Router from 'next/router';
 import { FirebaseError } from 'firebase';
 
-import { Layout } from '../src/components';
-import { useAuth } from '../src/hooks';
+import { Layout } from '../components';
+import { useAuth } from '../hooks';
 
 const SignInPage = () => (
   <Layout>

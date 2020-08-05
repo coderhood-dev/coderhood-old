@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { AppProps } from 'next/app';
-import { ThemeProvider, CSSReset, ColorModeProvider } from '@chakra-ui/core';
+import Head from 'next/head';
+import { ChakraProvider, CSSReset, ColorModeProvider } from '@chakra-ui/core';
 
 import '@material/react-text-field/dist/text-field.css';
 
-import { initAuth } from '../src/context/auth';
-import { AuthContext } from '../src/context';
+import { initAuth } from '../context/auth';
+import { AuthContext } from '../context';
+import { coderhoodTheme } from '../theme';
 
 const auth = initAuth(); // TODO: test this move
 
@@ -23,14 +25,20 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   }, []);
 
   return (
-    <ThemeProvider>
+    <ChakraProvider theme={coderhoodTheme}>
+      <Head>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+        />
+      </Head>
       <CSSReset />
       <ColorModeProvider>
         <AuthContext.Provider value={{ ...auth, user }}>
           <Component {...pageProps} />
         </AuthContext.Provider>
       </ColorModeProvider>
-    </ThemeProvider>
+    </ChakraProvider>
   );
 };
 

@@ -1,8 +1,7 @@
 import React from 'react';
-import { Text } from '@chakra-ui/core';
 import Link from 'next/link';
 import matter from 'gray-matter';
-import { Layout } from '../src/components';
+import { Layout, Text } from '../components';
 
 const Blog = ({ posts }) => (
   <Layout>

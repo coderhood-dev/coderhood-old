@@ -1,8 +1,9 @@
 import React from 'react';
 import SocialIcons from './SocialIcons';
 import styled from '@emotion/styled';
-import { ThemeSwitcher } from '.';
-import { Text, Flex } from '@chakra-ui/core';
+import { Flex } from '@chakra-ui/core';
+
+import { ThemeSwitcher, Text } from '../components';
 
 const FooterContainer = styled.div`
   width: 100%;
