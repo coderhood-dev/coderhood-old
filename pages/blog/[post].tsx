@@ -1,8 +1,8 @@
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
-import { Text, Button, Icon } from '@chakra-ui/core';
+import { Button, Icon } from '@chakra-ui/core';
 
-import { Layout } from '../../src/components';
+import { Layout, Text } from '../../components';
 
 export default function BlogTemplate({
   content: markdownBody,

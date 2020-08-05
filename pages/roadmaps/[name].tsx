@@ -6,11 +6,10 @@ import {
   getRoadmap,
   GetRoadmapResponse,
   Subject,
-} from '../../src/api/roadmaps';
-import { Layout, Card } from '../../src/components';
+} from '../../api/roadmaps';
+import { Layout, Card, Text } from '../../components';
 
-import clsx from 'clsx';
-import { Text, Box, Avatar, Collapse, Flex } from '@chakra-ui/core';
+import { Box, Avatar, Collapse, Flex } from '@chakra-ui/core';
 
 interface Props {
   roadmap: GetRoadmapResponse;
@@ -73,10 +72,7 @@ const Roadmap: React.FC<Props> = ({ roadmap }) => {
                   <IconButton aria-label="share">
                     <ShareIcon />
                   </IconButton> */}
-                  {/* <IconButton
-                    className={clsx(classes.expand, {
-                      [classes.expandOpen]: expanded,
-                    })}
+                  {/* 
                     onClick={handleExpandClick}
                     aria-expanded={expanded}
                     aria-label="show more"

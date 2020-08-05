@@ -1,12 +1,25 @@
-const Dotenv = require("dotenv-webpack");
+const withPlugins = require('next-compose-plugins');
+const optimizedImages = require('next-optimized-images');
 
-module.exports = {
+const nextConfig = {
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    config.plugins.push(new Dotenv({ silent: true }));
     config.module.rules.push({
       test: /\.md$/,
       use: 'raw-loader',
     });
+    config.module.rules.push({
+      test: /\.svg$/,
+      issuer: {
+        test: /\.(js|ts)x?$/,
+      },
+      use: ['@svgr/webpack'],
+    });
     return config;
   }
 };
+
+module.exports = withPlugins([
+  [optimizedImages, {
+    /* config for next-optimized-images */
+  }],
+], nextConfig);
