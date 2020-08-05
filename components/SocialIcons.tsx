@@ -3,10 +3,10 @@ import { Flex, Icon } from '@chakra-ui/core';
 
 const SocialIcons = () => (
   <Flex direction="row">
-    <Icon name="check-circle" size="24px" />
-    <Icon name="check-circle" size="24px" />
-    <Icon name="check-circle" size="24px" />
-    <Icon name="check-circle" size="24px" />
+    <Icon name="check-circle" />
+    <Icon name="check-circle" />
+    <Icon name="check-circle" />
+    <Icon name="check-circle" />
     {/* TODO: change this */}
     {/* <IconButton target="_blank" href="https://github.com/emaLorenzo">
       <FontAwesomeIcon icon={faGithub} />
