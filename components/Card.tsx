@@ -1,13 +1,9 @@
 import React, { PropsWithChildren } from 'react';
 import { motion } from 'framer-motion';
-import { Box } from '@chakra-ui/core';
+import { Box, BoxProps } from '@chakra-ui/core';
 import styled from '@emotion/styled';
 
 import { Colors } from '../theme';
-
-interface Props {
-  styles?: any;
-}
 
 const AnimatedContainer = styled(motion.div)`
   border-width: 2px;
@@ -17,32 +13,32 @@ const AnimatedContainer = styled(motion.div)`
   padding: 2rem;
   background-color: white;
   position: relative;
-  top: -5px;
-  left: 5px;
+  top: -0.25rem;
+  left: 0.25rem;
 `;
 
-const CardComponent: React.FC<PropsWithChildren<Props>> = ({
-  styles,
+const CardComponent: React.FC<PropsWithChildren<BoxProps>> = ({
   children,
+  ...props
 }) => {
   const variants = {
     hover: {
-      translateY: -10,
-      translateX: 10,
+      translateY: -8,
+      translateX: 8,
     },
     tap: {
-      translateY: -5,
-      translateX: 5,
+      translateY: -8,
+      translateX: 8,
     },
   };
   return (
-    <Box position="relative" style={styles} cursor="pointer">
+    <Box position="relative" cursor="pointer" {...props}>
       <AnimatedContainer whileHover="hover" whileTap="tap" variants={variants}>
         {children}
       </AnimatedContainer>
       <Box
-        w="100%"
-        h="100%"
+        w="full"
+        h="full"
         position="absolute"
         top={0}
         zIndex="hide"
