@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Heading, Flex, Button } from '@chakra-ui/core';
 import { useAuth } from '../hooks';
 
-const Header = () => {
+export const Header = () => {
   const { user, doSignOut } = useAuth();
   return (
     <Flex
@@ -49,5 +49,3 @@ const Header = () => {
     </Flex>
   );
 };
-
-export default Header;

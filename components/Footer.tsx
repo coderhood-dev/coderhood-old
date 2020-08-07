@@ -15,21 +15,17 @@ const FooterContainer = styled.div`
   justify-content: space-between;
 `;
 
-const Footer = () => {
-  return (
-    <FooterContainer>
-      <Flex direction="column">
-        <Text color="gray.800">
-          {`${process.env.NEXT_PUBLIC_APP_NAME} ${new Date().getFullYear()}`}
-        </Text>
-        <Text color="gray.800">
-          {`Made with 🦄 by ${process.env.NEXT_PUBLIC_APP_NAME} Team`}
-        </Text>
-      </Flex>
-      <SocialIcons />
-      <ThemeSwitcher />
-    </FooterContainer>
-  );
-};
-
-export default Footer;
+export const Footer = () => (
+  <FooterContainer>
+    <Flex direction="column">
+      <Text color="gray.800">
+        {`${process.env.NEXT_PUBLIC_APP_NAME} ${new Date().getFullYear()}`}
+      </Text>
+      <Text color="gray.800">
+        {`Made with 🦄 by ${process.env.NEXT_PUBLIC_APP_NAME} Team`}
+      </Text>
+    </Flex>
+    <SocialIcons />
+    <ThemeSwitcher />
+  </FooterContainer>
+);

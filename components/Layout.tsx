@@ -8,7 +8,10 @@ interface Props {
   title?: string;
 }
 
-const Layout: React.FC<PropsWithChildren<Props>> = ({ children, title }) => (
+export const Layout: React.FC<PropsWithChildren<Props>> = ({
+  children,
+  title,
+}) => (
   <Flex direction="column" minHeight="100vh">
     <Head title={title} />
     <Header />
@@ -22,5 +25,3 @@ const Layout: React.FC<PropsWithChildren<Props>> = ({ children, title }) => (
 Layout.defaultProps = {
   title: process.env.NEXT_PUBLIC_APP_NAME,
 };
-
-export default Layout;
