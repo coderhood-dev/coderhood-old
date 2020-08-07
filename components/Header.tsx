@@ -26,7 +26,7 @@ const Header = () => {
 
       <Flex align="center" justify="flex-end" flexGrow={1}>
         <Link href="/jobs">
-          <Button variant="ghost">Search Jobs</Button>
+          <Button variant="ghost">Trabajos</Button>
         </Link>
         <Link href="/blog">
           <Button variant="ghost">Blog</Button>
