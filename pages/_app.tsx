@@ -15,7 +15,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   const [user, setUser] = useState<firebase.User>(null);
 
   useEffect(() => {
-    // Firebase's authentification listener which updated useAuth state
+    // Firebase authentication listener which updates useAuth's state
     const removeListener = auth.onAuthStateChanged((authUser) => {
       authUser ? setUser(authUser) : setUser(null);
     });
