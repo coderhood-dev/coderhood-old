@@ -7,5 +7,6 @@ import TextField from './TextField';
 export { Form } from './Form';
 export { Text } from './Text';
 export { TextureGrid } from './TextureGrid';
+export { CardJob } from './CardJob';
 
 export { ThemeSwitcher, Header, Footer, Layout, Card, TextField };
