@@ -17,7 +17,7 @@ const AnimatedContainer = styled(motion.div)`
   left: 0.25rem;
 `;
 
-const CardComponent: React.FC<PropsWithChildren<BoxProps>> = ({
+export const Card: React.FC<PropsWithChildren<BoxProps>> = ({
   children,
   ...props
 }) => {
@@ -50,5 +50,3 @@ const CardComponent: React.FC<PropsWithChildren<BoxProps>> = ({
     </Box>
   );
 };
-
-export default CardComponent;

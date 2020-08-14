@@ -1,9 +1,9 @@
 import React from 'react';
-import { Field, ErrorMessage } from 'formik';
+import { Field, ErrorMessage as FormikErrorMessage } from 'formik';
 import MaterialTextField, { Input } from '@material/react-text-field';
 import styled from '@emotion/styled';
 
-const ErrorMessageCustom = styled(ErrorMessage)`
+const ErrorMessage = styled(FormikErrorMessage)`
   font-size: 12px;
   padding-left: 10px;
   color: #b91e3a;
@@ -15,7 +15,7 @@ export interface Props {
   placeholder?: string;
 }
 
-const TextField = ({ name, type, placeholder }: Props) => (
+export const TextField = ({ name, type, placeholder }: Props) => (
   <Field validateOnBlur validateOnChange name={name}>
     {({ field, form }) => (
       <>
@@ -28,10 +28,8 @@ const TextField = ({ name, type, placeholder }: Props) => (
             value={field.value}
           />
         </MaterialTextField>
-        <ErrorMessageCustom component="span" name={name} />
+        <ErrorMessage component="span" name={name} />
       </>
     )}
   </Field>
 );
-
-export default TextField;
