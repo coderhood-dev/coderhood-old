@@ -1,6 +1,6 @@
 import defaultTheme, { Theme } from '@chakra-ui/theme';
 
-import { stylesConfig } from '../coderhood-ui/button/styles';
+// import { stylesConfig } from '../coderhood-ui/button/styles';
 import { Colors } from './colors';
 
 const breakpoints = ['30em', '48em', '62em', '80em', '100em'];
@@ -38,7 +38,7 @@ export const coderhoodTheme = {
   },
   components: {
     ...defaultTheme.components,
-    Button: stylesConfig,
+    // Button: stylesConfig,
     Heading: {
       ...defaultTheme.components.Heading,
       baseStyle: {
