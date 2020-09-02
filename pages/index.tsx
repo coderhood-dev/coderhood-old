@@ -51,7 +51,6 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
           src="hero.svg"
           alt="learning with friends videocall"
           objectPosition="70% 70%"
-          flaot="right"
           width="100%"
         />
       </Flex>
