@@ -2,10 +2,13 @@ import React from 'react';
 import { GetStaticProps } from 'next';
 import Typed from 'react-typed';
 import Link from 'next/link';
-import { Heading, Flex, Avatar } from '@chakra-ui/core';
+import { Heading, Flex, Avatar, Image } from '@chakra-ui/core';
 import { motion } from 'framer-motion';
+
 import { getRoadmaps, GetRoadmapsResponse } from '../api/roadmaps';
 import { Layout, Card, Text, TextureGrid, Dash } from '../components';
+// import { Button } from '../coderhood-ui';
+import { Colors } from '../theme/colors';
 
 interface Props {
   roadmaps: GetRoadmapsResponse;
@@ -13,10 +16,10 @@ interface Props {
 
 const Home: React.FC<Props> = ({ roadmaps }) => {
   return (
-    <Layout>
-      <Flex w="100%" h="100vh" px="8rem" py="11%" alignItems="center">
+    <>
+      <Flex w="100%" h="100vh" pl="7rem" alignItems="center">
         <TextureGrid
-          src="/images/hideout.svg"
+          src="/textures/hideout.svg"
           unitSize={30}
           x={3}
           y={25}
@@ -25,7 +28,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
           left={0}
           opacity={0.3}
         />
-        <Flex direction="column" flex={1}>
+        <Flex direction="column" width="40%">
           <Typed
             strings={[
               'Todos pueden programar, aprendamos juntos.',
@@ -37,28 +40,19 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
             style={{
               fontFamily: 'DM Sans',
               fontWeight: 'bold',
-              fontSize: '3rem',
+              fontSize: '2.5rem',
             }}
           />
           <Text paddingTop="1rem">
             {`${process.env.NEXT_PUBLIC_APP_NAME} es la comunidad que impulsa el aprendizaje autodidacta y colaborativo.`}
           </Text>
         </Flex>
-        <Flex direction="column" flex={1.2}>
-          <motion.div
-            animate={{ y: 15 }}
-            transition={{
-              flip: Infinity,
-              ease: 'easeInOut',
-              duration: 1,
-            }}
-            whileHover={{
-              scale: 1.02,
-            }}
-          >
-            <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" />
-          </motion.div>
-        </Flex>
+        <Image
+          src="hero.svg"
+          alt="learning with friends videocall"
+          objectPosition="70% 70%"
+          width="100%"
+        />
       </Flex>
 
       {/* dash container */}
@@ -117,7 +111,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
             </Card>
           ))}
       </Flex>
-    </Layout>
+    </>
   );
 };
 

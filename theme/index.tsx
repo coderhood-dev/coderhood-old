@@ -1,5 +1,8 @@
 import defaultTheme, { Theme } from '@chakra-ui/theme';
 
+// import { stylesConfig } from '../coderhood-ui/button/styles';
+import { Colors } from './colors';
+
 const breakpoints = ['30em', '48em', '62em', '80em', '100em'];
 
 // @ts-ignore
@@ -13,7 +16,7 @@ breakpoints.lg = breakpoints[3];
 // @ts-ignore
 breakpoints.xl = breakpoints[4];
 
-export const coderhoodTheme: Theme = {
+export const coderhoodTheme = {
   ...defaultTheme,
   breakpoints,
   styles: {
@@ -21,10 +24,21 @@ export const coderhoodTheme: Theme = {
   },
   colors: {
     ...defaultTheme.colors,
-    // define more colors..
+    orange: {
+      ...defaultTheme.colors.orange,
+      400: '#EA7F61',
+      500: Colors.brand,
+      600: '#B55136',
+    },
+    gray: {
+      ...defaultTheme.colors.gray,
+      600: '#2C2C2C',
+      800: '#222222',
+    },
   },
   components: {
     ...defaultTheme.components,
+    // Button: stylesConfig,
     Heading: {
       ...defaultTheme.components.Heading,
       baseStyle: {
@@ -34,10 +48,8 @@ export const coderhoodTheme: Theme = {
       },
     },
   },
-};
-
-export const Colors = {
-  accent: coderhoodTheme.colors.orange[300],
-  primary: coderhoodTheme.colors.orange[500],
-  secondary: coderhoodTheme.colors.black[700],
+  fonts: {
+    dmSans: 'DM Sans, sans-serif',
+    robotoMono: 'Roboto Mono, monospace',
+  },
 };
