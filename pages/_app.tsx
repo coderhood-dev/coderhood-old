@@ -6,6 +6,7 @@ import { ChakraProvider, CSSReset, ColorModeProvider } from '@chakra-ui/core';
 import '@material/react-text-field/dist/text-field.css';
 
 import { initAuth } from '../context/auth';
+import { Layout } from '../components';
 import { AuthContext } from '../context';
 import { coderhoodTheme } from '../theme';
 
@@ -35,7 +36,9 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
       <CSSReset />
       <ColorModeProvider>
         <AuthContext.Provider value={{ ...auth, user }}>
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </AuthContext.Provider>
       </ColorModeProvider>
     </ChakraProvider>
