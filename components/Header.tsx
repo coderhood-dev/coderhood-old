@@ -1,49 +1,67 @@
 import React from 'react';
 import Link from 'next/link';
-import { Heading, Flex, Button } from '@chakra-ui/core';
+import { Box, Flex, Image } from '@chakra-ui/core';
+import { rgba } from 'polished';
+
+import { Colors } from '../theme/colors';
 import { useAuth } from '../hooks';
+
+const HeaderButton = ({
+  children,
+  href,
+}: {
+  children: string;
+  href?: string;
+}) => (
+  <Box
+    as="a"
+    href={href}
+    fontFamily="robotoMono"
+    fontSize={13}
+    fontWeight="600"
+    borderRadius={4}
+    px={4}
+    py={2}
+    mx={1}
+    _hover={{ backgroundColor: rgba(Colors.primary, 0.1) }}
+  >
+    {children}
+  </Box>
+);
 
 export const Header = () => {
   const { user, doSignOut } = useAuth();
   return (
     <Flex
-      as="nav"
-      align="center"
+      as="header"
+      align="stretch"
       justify="space-between"
-      wrap="wrap"
       px="2rem"
-      py="1rem"
-      position="absolute"
-      width="100%"
+      py="1.25rem"
+      width="full"
+      height="4.5rem"
     >
-      <Flex align="center" mr={5}>
-        <Link href="/">
-          <Heading as="h1" size="lg">
-            {process.env.NEXT_PUBLIC_APP_NAME}
-          </Heading>
-        </Link>
-      </Flex>
+      <Link href="/">
+        <Image
+          src="branding/logo.svg"
+          alignSelf="flex-start"
+          height="100%"
+          cursor="pointer"
+        />
+      </Link>
 
-      <Flex align="center" justify="flex-end" flexGrow={1}>
-        <Link href="/jobs">
-          <Button variant="ghost">Trabajos</Button>
-        </Link>
-        <Link href="/blog">
-          <Button variant="ghost">Blog</Button>
-        </Link>
+      <Flex as="nav" align="center" justify="flex-end">
+        <HeaderButton href="/jobs">Trabajos</HeaderButton>
+        <HeaderButton href="/blog">Blog</HeaderButton>
         {!user ? (
           <>
-            <Link href="/signin">
-              <Button variant="ghost">Iniciar sesión</Button>
-            </Link>
-            <Link href="/signup">
-              <Button variant="ghost">Registrate</Button>
-            </Link>
+            <HeaderButton href="/signin">Iniciar sesión</HeaderButton>
+            <HeaderButton href="/signup">Registrate</HeaderButton>
           </>
         ) : (
-          <Button variant="ghost" onClick={doSignOut}>
-            Salir
-          </Button>
+          <Flex onClick={doSignOut}>
+            <HeaderButton>Salir</HeaderButton>
+          </Flex>
         )}
       </Flex>
     </Flex>
