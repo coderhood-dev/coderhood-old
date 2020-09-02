@@ -3,12 +3,13 @@ import { motion } from 'framer-motion';
 import { Box, BoxProps } from '@chakra-ui/core';
 import styled from '@emotion/styled';
 
-import { Colors } from '../theme';
+// import { Colors } from '../theme/colors';
+
+/* border-color: ${Colors.primary}; */
 
 const AnimatedContainer = styled(motion.div)`
   border-width: 2px;
   border-style: solid;
-  border-color: ${Colors.primary};
   border-radius: 4px;
   padding: 2rem;
   background-color: white;
@@ -44,8 +45,8 @@ export const Card: React.FC<PropsWithChildren<BoxProps>> = ({
         zIndex="hide"
         borderRadius={4}
         borderWidth={2}
-        borderColor={Colors.primary}
-        bg={Colors.accent}
+        // borderColor={Colors.primary}
+        // bg={Colors.accent}
       />
     </Box>
   );
