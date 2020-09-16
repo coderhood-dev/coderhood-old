@@ -1,14 +1,11 @@
 import React from 'react';
-import SocialIcons from './SocialIcons';
 import styled from '@emotion/styled';
-import { Flex } from '@chakra-ui/core';
-
-import { ThemeSwitcher, Text } from '../components';
+import { Image, Box, Link } from '@chakra-ui/core';
 
 const FooterContainer = styled.div`
   width: 100%;
-  padding: 40px 80px;
-  background-color: blue;
+  padding: 2.5% 3.1%;
+  background-color: #222222;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -17,15 +14,28 @@ const FooterContainer = styled.div`
 
 export const Footer = () => (
   <FooterContainer>
-    <Flex direction="column">
-      <Text color="gray.800">
-        {`${process.env.NEXT_PUBLIC_APP_NAME} ${new Date().getFullYear()}`}
-      </Text>
-      <Text color="gray.800">
-        {`Made with 🦄 by ${process.env.NEXT_PUBLIC_APP_NAME} Team`}
-      </Text>
-    </Flex>
-    <SocialIcons />
-    <ThemeSwitcher />
+    <Image w={['36%', '24%', '12%']} src="Logo.png" alt="Logo" />
+    <Box
+      d="flex"
+      w={['50%', '36%', '22%']}
+      justifyContent="space-between"
+      mr="5"
+    >
+      <Link
+        w="11%"
+        href="https://www.youtube.com/channel/UCZiR1u5RtSYYt8qcenxr-Uw"
+      >
+        <Image src="youtube.svg" />
+      </Link>
+      <Link w="9%" href="https://twitter.com/coderhood_dev">
+        <Image src="twitter.svg" />
+      </Link>
+      <Link w="9%" href="https://www.instagram.com/coderhood.dev/">
+        <Image src="instagram.svg" />
+      </Link>
+      <Link w="9%" href="https://www.linkedin.com/company/coderhood/">
+        <Image src="linkedin.svg" />
+      </Link>
+    </Box>
   </FooterContainer>
 );
