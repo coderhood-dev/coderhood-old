@@ -57,7 +57,7 @@ const Roadmap: React.FC<Props> = ({ roadmap }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const roadmaps = await getRoadmaps();
+  const roadmaps = []; // await getRoadmaps();
 
   // Get the paths we want to pre-render based on roadmaps
   const paths = roadmaps.map((roadmap) => `/roadmaps/${roadmap.name}`);
@@ -68,7 +68,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-  const roadmap = await getRoadmap(params.name);
+  const roadmap = {}; // await getRoadmap(params.name);
   return {
     props: { roadmap },
   };
