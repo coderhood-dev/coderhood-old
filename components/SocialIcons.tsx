@@ -1,12 +1,12 @@
-import React from 'react';
-import { Flex, Icon } from '@chakra-ui/core';
+import React from 'react'
+import { Flex, Icon } from '@chakra-ui/core'
 
 const SocialIcons = () => (
-  <Flex direction="row">
-    <Icon name="check-circle" />
-    <Icon name="check-circle" />
-    <Icon name="check-circle" />
-    <Icon name="check-circle" />
+  <Flex direction='row'>
+    <Icon name='copy' color='white' />
+    <Icon name='copy' color='white' />
+    <Icon name='copy' color='white' />
+    <Icon name='copy' color='white' />
     {/* TODO: change this */}
     {/* <IconButton target="_blank" href="https://github.com/emaLorenzo">
       <FontAwesomeIcon icon={faGithub} />
@@ -21,6 +21,6 @@ const SocialIcons = () => (
       <FontAwesomeIcon icon={faFacebook} />
     </IconButton> */}
   </Flex>
-);
+)
 
-export default SocialIcons;
+export default SocialIcons
