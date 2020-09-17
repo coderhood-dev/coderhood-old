@@ -10,7 +10,7 @@ export const Dash: React.FC<Props> = ({ direction }) => (
     w={direction === 'vertical' ? 1 : 4}
     h={direction === 'vertical' ? 4 : 1}
     m={1}
-    bg="black"
+    bg="white"
   />
 );
 
