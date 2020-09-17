@@ -50,6 +50,7 @@ export const Header = () => {
         />
       </Link>
 
+      {/* 
       <Flex as="nav" align="center" justify="flex-end">
         <HeaderButton href="/jobs">Trabajos</HeaderButton>
         <HeaderButton href="/blog">Blog</HeaderButton>
@@ -64,6 +65,7 @@ export const Header = () => {
           </Flex>
         )}
       </Flex>
+       */}
     </Flex>
   );
 };
