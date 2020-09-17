@@ -22,18 +22,18 @@ export const Footer = () => (
       mr="5"
     >
       <Link
-        w="11%"
+        w="9%"
         href="https://www.youtube.com/channel/UCZiR1u5RtSYYt8qcenxr-Uw"
       >
         <Image src="youtube.svg" />
       </Link>
-      <Link w="9%" href="https://twitter.com/coderhood_dev">
+      <Link w="7%" href="https://twitter.com/coderhood_dev">
         <Image src="twitter.svg" />
       </Link>
-      <Link w="9%" href="https://www.instagram.com/coderhood.dev/">
+      <Link w="7%" href="https://www.instagram.com/coderhood.dev/">
         <Image src="instagram.svg" />
       </Link>
-      <Link w="9%" href="https://www.linkedin.com/company/coderhood/">
+      <Link w="7%" href="https://www.linkedin.com/company/coderhood/">
         <Image src="linkedin.svg" />
       </Link>
     </Box>
