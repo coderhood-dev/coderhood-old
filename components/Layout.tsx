@@ -15,7 +15,7 @@ export const Layout: React.FC<PropsWithChildren<Props>> = ({
   <Flex direction="column" minHeight="100vh">
     <Head title={title} />
     <Header />
-    <Flex direction="column" flex={1} alignItems="center">
+    <Flex bg="#222222" direction="column" flex={1} alignItems="center">
       {children}
     </Flex>
     <Footer />

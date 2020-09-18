@@ -9,12 +9,11 @@ const FooterContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 `;
 
 export const Footer = () => (
   <FooterContainer>
-    <Image w={['36%', '24%', '12%']} src="Logo.png" alt="Logo" />
     <Box
       d="flex"
       w={['50%', '36%', '22%']}
