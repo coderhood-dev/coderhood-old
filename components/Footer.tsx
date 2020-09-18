@@ -14,8 +14,6 @@ const FooterContainer = styled.div`
 
 export const Footer = () => (
   <FooterContainer>
-    {/* LOGO TEMPORALMENTE COMENTADO
-    <Image w={['36%', '24%', '12%']} src="Logo.png" alt="Logo" />*/}
     <Box
       d="flex"
       w={['50%', '36%', '22%']}
