@@ -18,16 +18,6 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
   return (
     <>
       <Flex w="100%" h="100vh" pl="7rem" alignItems="center">
-        <TextureGrid
-          src="/textures/hideout.svg"
-          unitSize={30}
-          x={3}
-          y={25}
-          position="absolute"
-          top={80}
-          left={0}
-          opacity={0.3}
-        />
         <Flex direction="column" width="40%">
           <Typed
             strings={[
