@@ -48,6 +48,7 @@ const DiscordConnect = () => (
         <Link
           width={['110px', '110px', '110px', '130px']}
           href="https://discord.gg/xw2dbyv"
+          target="_blank"
         >
           <Button
             bg="black"

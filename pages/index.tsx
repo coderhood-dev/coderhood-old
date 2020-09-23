@@ -80,6 +80,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
               width={['70px', '90px', '110px', '130px']}
               href="https://discord.gg/xw2dbyv"
               _hover={{ color: 'white' }}
+              target="_blank"
             >
               <Button
                 _hover={{ bg: '#f26840' }}
