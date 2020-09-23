@@ -3,18 +3,25 @@ import { Flex, Image, SimpleGrid, Button, Link } from '@chakra-ui/core';
 import { Text } from '../components';
 
 const DiscordConnect = () => (
-  <Flex w="100%" h="80vh" alignItems="center">
+  <>
     <Flex
       w="100%"
-      h="45vh"
+      h="50vh"
       alignItems="center"
       justifyContent="center"
       bg="#f26840"
     >
-      <Flex direction="column" justifyContent="flex-start" width="70%">
+      <Flex
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        textAlign="center"
+        width="60%"
+      >
         <Text
           color="black"
-          fontFamily="DM Sans"
+          fontFamily="Poppins"
+          fontWeight="700"
           fontSize={['3rem', '3rem', '3rem', '3rem', '2.3rem', '3.4rem']}
           mb={['5px', '5px', '7px']}
         >
@@ -22,25 +29,24 @@ const DiscordConnect = () => (
         </Text>
         <Text
           color="black"
+          fontFamily="Public Sans"
           fontSize={[
             '0.8rem',
             '0.8rem',
             '0.8rem',
             '0.8rem',
-            '0.9rem',
-            '1.4rem',
+            '1.1rem',
+            '1.6rem',
           ]}
           mt={['5px', '5px', '7px']}
           mb={['10px', '10px', '20px', '30px']}
         >
           Coderhood Academy utiliza Discord como plataforma donde se organizan
-          en canales ordenados temas donde puedes colaborar, compartir o
-          simplemente hablar de tu dia sin monopolizar un chat de grupó. Unete
-          hoy mismo y se parte de todos los beneficios que solo Coderhood puede
-          dar.
+          en canales ordenados temas donde podes colaborar, compartir o
+          participar de las clases.
         </Text>
         <Link
-          width={['60px', '80px', '100px', '120px']}
+          width={['110px', '110px', '110px', '130px']}
           href="https://discord.gg/xw2dbyv"
         >
           <Button
@@ -48,8 +54,9 @@ const DiscordConnect = () => (
             _hover={{ bg: 'black', color: '#E2E8F0' }}
             color="white"
             variant="solid"
-            size="sm"
-            width={['100px', '100px', '100px', '120px']}
+            size="md"
+            fontSize="0.9rem"
+            width={['110px', '110px', '110px', '130px']}
           >
             <Flex justifyContent="space-around">
               Sumate
@@ -63,7 +70,7 @@ const DiscordConnect = () => (
         </Link>
       </Flex>
     </Flex>
-  </Flex>
+  </>
 );
 
 export default DiscordConnect;

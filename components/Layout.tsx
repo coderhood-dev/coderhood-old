@@ -18,7 +18,6 @@ export const Layout: React.FC<PropsWithChildren<Props>> = ({
     <Flex bg="#222222" direction="column" flex={1} alignItems="center">
       {children}
     </Flex>
-    <Footer />
   </Flex>
 );
 
