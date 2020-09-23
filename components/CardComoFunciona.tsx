@@ -43,13 +43,14 @@ const CardComoFunciona = ({ image, title, description, imageSide }) => {
                 </Text>
                 <Text
                   color="white"
+                  fontFamily="Public Sans"
                   fontSize={[
                     '0.8rem',
                     '0.8rem',
                     '0.8rem',
                     '0.8rem',
-                    '0.9rem',
-                    '1.4rem',
+                    '1.1rem',
+                    '1.6rem',
                   ]}
                   mt={['5px', '5px', '8px', '8px']}
                 >
@@ -83,13 +84,14 @@ const CardComoFunciona = ({ image, title, description, imageSide }) => {
                 </Text>
                 <Text
                   color="white"
+                  fontFamily="Public Sans"
                   fontSize={[
                     '0.8rem',
                     '0.8rem',
                     '0.8rem',
                     '0.8rem',
-                    '0.9rem',
-                    '1.4rem',
+                    '1.1rem',
+                    '1.6rem',
                   ]}
                   mt={['5px', '5px', '8px', '8px']}
                 >

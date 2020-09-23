@@ -47,28 +47,29 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
 
   return (
     <>
-      <Flex w="100%" h="100vh" alignItems="center">
+      <Flex w="100%" h="90vh" alignItems="center">
         <Flex w="100%" h="60vh" alignItems="center" justifyContent="center">
           <Flex direction="column" justifyContent="flex-start" width="80%">
             <Text
               color="white"
-              fontFamily="DM Sans"
+              fontFamily="Poppins"
               fontSize={['2rem', '2rem', '2rem', '3.5rem', '3.5rem', '5.3rem']}
-              mb={['5px', '5px', '7px']}
               width="50%"
+              fontWeight="400"
             >
               Todos pueden programar.
             </Text>
             <Text
               color="#f26840"
-              fontFamily="DM Sans"
+              fontFamily="Poppins"
+              fontWeight="600"
               fontSize={['2rem', '2rem', '2rem', '3.5rem', '3.5rem', '5.3rem']}
-              mb={['5px', '5px', '7px']}
             >
               Bienvenido a tu comunidad.
             </Text>
             <Text
               color="white"
+              fontFamily="Public Sans"
               fontSize={['1rem', '1rem', '1rem', '1.5rem', '1.1rem', '1.7rem']}
               mt={['5px', '5px', '7px']}
               mb={['10px', '10px', '20px', '30px']}
@@ -76,19 +77,20 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
               En coderhood impulzamos el aprendizaje autodidacta y colaborativo.
             </Text>
             <Link
-              width={['60px', '80px', '100px', '120px']}
+              width={['70px', '90px', '110px', '130px']}
               href="https://discord.gg/xw2dbyv"
+              _hover={{ color: 'white' }}
             >
               <Button
+                _hover={{ bg: '#f26840' }}
                 bg="#f26840"
-                _hover={{ bg: '#f26840', color: '#E2E8F0' }}
+                borderRadius="3px"
                 color="white"
-                variant="solid"
-                borderRadius="4px"
-                size="sm"
-                width={['100px', '100px', '100px', '120px']}
+                size="md"
+                fontSize="0.9rem"
+                width={['70px', '90px', '110px', '130px']}
               >
-                Sumate
+                Unite
               </Button>
             </Link>
           </Flex>

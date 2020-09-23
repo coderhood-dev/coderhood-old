@@ -39,7 +39,7 @@ export const Header = () => {
       px="2rem"
       py="1.25rem"
       width="full"
-      height="4.5rem"
+      height="10vh"
       bg="#222222"
     >
       <Link href="/">
