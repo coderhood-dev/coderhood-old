@@ -47,7 +47,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
             <Text
               color="white"
               fontFamily="Poppins"
-              fontSize={['2rem', '2rem', '3.5rem', '3.2rem', '5.3rem']}
+              fontSize={['2rem', '2rem', '3.5rem', '3.2rem', '4.1rem']}
               width="50%"
               fontWeight="400"
             >
@@ -57,14 +57,14 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
               color="#f26840"
               fontFamily="Poppins"
               fontWeight="600"
-              fontSize={['2rem', '2rem', '3.5rem', '3.2rem', '5.3rem']}
+              fontSize={['2rem', '2rem', '3.5rem', '3.2rem', '4.1rem']}
             >
               Bienvenido a tu comunidad.
             </Text>
             <Text
               color="white"
               fontFamily="Public Sans"
-              fontSize={['1rem', '1rem', '1.1rem', '1.1rem', '1.7rem']}
+              fontSize={['1rem', '1rem', '1.1rem', '1.1rem', '1.3rem']}
               mt={['0.3rem', '0.3rem', '0.5rem']}
               mb={['0.7rem', '10px', '1.5rem', '2rem']}
             >

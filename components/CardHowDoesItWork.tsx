@@ -35,7 +35,7 @@ const CardHowDoesItWork = ({ image, title, description, imageSide }) => {
           <Text
             color="white"
             fontFamily="DM Sans"
-            fontSize={['1.2rem', '1.2rem', '2rem', '2.4rem', '3.4rem']}
+            fontSize={['1.2rem', '1.2rem', '2rem', '2.4rem', '2.8rem']}
             mb={['0.3rem', '0.3rem', '0.5rem', '0.5rem']}
           >
             {title}
@@ -43,7 +43,7 @@ const CardHowDoesItWork = ({ image, title, description, imageSide }) => {
           <Text
             color="white"
             fontFamily="Public Sans"
-            fontSize={['0.9rem', '0.9rem', '1rem', '1rem', '1.6rem']}
+            fontSize={['0.9rem', '0.9rem', '1rem', '1rem', '1.4rem']}
           >
             {description}
           </Text>

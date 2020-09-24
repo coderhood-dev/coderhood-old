@@ -23,7 +23,7 @@ const DiscordConnect = () => (
           color="black"
           fontFamily="Poppins"
           fontWeight="700"
-          fontSize={['1.2rem', '1.2rem', '2rem', '2.4rem', '3.4rem']}
+          fontSize={['1.2rem', '1.2rem', '2rem', '2.4rem', '2.8rem']}
           mb={['5px', '5px', '7px']}
         >
           Unite a la comunidad.
@@ -31,7 +31,7 @@ const DiscordConnect = () => (
         <Text
           color="black"
           fontFamily="Public Sans"
-          fontSize={['0.9rem', '0.9rem', '1rem', '1rem', '1.6rem']}
+          fontSize={['0.9rem', '0.9rem', '1rem', '1rem', '1.4rem']}
           mt={['5px', '5px', '7px']}
           mb={['10px', '10px', '20px', '30px']}
         >
