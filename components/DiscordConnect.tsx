@@ -10,6 +10,7 @@ const DiscordConnect = () => (
       alignItems="center"
       justifyContent="center"
       bg="#f26840"
+      mt="10vh"
     >
       <Flex
         direction="column"
@@ -22,22 +23,15 @@ const DiscordConnect = () => (
           color="black"
           fontFamily="Poppins"
           fontWeight="700"
-          fontSize={['3rem', '3rem', '3rem', '3rem', '2.3rem', '3.4rem']}
+          fontSize={['1.2rem', '1.2rem', '2rem', '2.4rem', '3.4rem']}
           mb={['5px', '5px', '7px']}
         >
-          Unete a la comunidad.
+          Unite a la comunidad.
         </Text>
         <Text
           color="black"
           fontFamily="Public Sans"
-          fontSize={[
-            '0.8rem',
-            '0.8rem',
-            '0.8rem',
-            '0.8rem',
-            '1.1rem',
-            '1.6rem',
-          ]}
+          fontSize={['0.9rem', '0.9rem', '1rem', '1rem', '1.6rem']}
           mt={['5px', '5px', '7px']}
           mb={['10px', '10px', '20px', '30px']}
         >

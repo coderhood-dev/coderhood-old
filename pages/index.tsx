@@ -4,7 +4,7 @@ import Typed from 'react-typed';
 import { Flex, Image, SimpleGrid, Button, Link } from '@chakra-ui/core';
 import { getRoadmaps, GetRoadmapsResponse } from '../api/roadmaps';
 import { Text } from '../components';
-import CardComoFunciona from '../components/CardComoFunciona';
+import CardHowDoesItWork from '../components/CardHowDoesItWork';
 import DiscordConnect from '../components/DiscordConnect';
 import { useBreakpointValue } from '@chakra-ui/media-query';
 
@@ -13,12 +13,6 @@ interface Props {
 }
 
 const Home: React.FC<Props> = ({ roadmaps }) => {
-  const titleFontSize = useBreakpointValue({
-    xs: '2.5rem',
-    sm: '2.5rem',
-    md: '2.5rem',
-  });
-
   const HowDoesItWork = [
     {
       image: 'indexone.svg',
@@ -30,7 +24,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
 
     {
       image: 'indextwo.svg',
-      title: 'Acompañamiento continuo..',
+      title: 'Acompañamiento continuo.',
       description:
         'Desde la dirección y los profesores hasta nuestro CEO, todos nos encontramos a tu disposición día a día para brindarte la mejor calidad de servicio.',
       imageSide: 'right',
@@ -53,7 +47,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
             <Text
               color="white"
               fontFamily="Poppins"
-              fontSize={['2rem', '2rem', '2rem', '3.5rem', '3.5rem', '5.3rem']}
+              fontSize={['2rem', '2rem', '3.5rem', '3.2rem', '5.3rem']}
               width="50%"
               fontWeight="400"
             >
@@ -63,21 +57,21 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
               color="#f26840"
               fontFamily="Poppins"
               fontWeight="600"
-              fontSize={['2rem', '2rem', '2rem', '3.5rem', '3.5rem', '5.3rem']}
+              fontSize={['2rem', '2rem', '3.5rem', '3.2rem', '5.3rem']}
             >
               Bienvenido a tu comunidad.
             </Text>
             <Text
               color="white"
               fontFamily="Public Sans"
-              fontSize={['1rem', '1rem', '1rem', '1.5rem', '1.1rem', '1.7rem']}
-              mt={['5px', '5px', '7px']}
-              mb={['10px', '10px', '20px', '30px']}
+              fontSize={['1rem', '1rem', '1.1rem', '1.1rem', '1.7rem']}
+              mt={['0.3rem', '0.3rem', '0.5rem']}
+              mb={['0.7rem', '10px', '1.5rem', '2rem']}
             >
               En coderhood impulzamos el aprendizaje autodidacta y colaborativo.
             </Text>
             <Link
-              width={['70px', '90px', '110px', '130px']}
+              width={['4rem', '6rem', '7rem', '8rem']}
               href="https://discord.gg/xw2dbyv"
               _hover={{ color: 'white' }}
               target="_blank"
@@ -85,11 +79,11 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
               <Button
                 _hover={{ bg: '#f26840' }}
                 bg="#f26840"
-                borderRadius="3px"
+                borderRadius="0.2rem"
                 color="white"
                 size="md"
                 fontSize="0.9rem"
-                width={['70px', '90px', '110px', '130px']}
+                width={['4rem', '6rem', '7rem', '8rem']}
               >
                 Unite
               </Button>
@@ -98,7 +92,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
         </Flex>
       </Flex>
       {HowDoesItWork.map((how) => (
-        <CardComoFunciona
+        <CardHowDoesItWork
           image={how.image}
           title={how.title}
           description={how.description}
