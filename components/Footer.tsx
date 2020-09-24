@@ -12,6 +12,7 @@ const FooterContainer = styled.div`
   justify-content: flex-end;
   @media (max-width: 600px) {
     justify-content: center;
+    padding: 1.5rem;
   }
 `;
 
