@@ -3,7 +3,7 @@ import defaultTheme, { Theme } from '@chakra-ui/theme';
 // import { stylesConfig } from '../coderhood-ui/button/styles';
 import { Colors } from './colors';
 
-const breakpoints = ['30em', '48em', '62em', '80em', '100em'];
+const breakpoints = ['48rem', '62rem', '80rem', '100rem', '120rem'];
 
 // @ts-ignore
 breakpoints.xs = breakpoints[0];

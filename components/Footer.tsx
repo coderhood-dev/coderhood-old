@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Image, Box, Link } from '@chakra-ui/core';
+import { Image, Box, Link, SimpleGrid } from '@chakra-ui/core';
 
 const FooterContainer = styled.div`
   width: 100%;
@@ -10,6 +10,9 @@ const FooterContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
 `;
 
 export const Footer = () => (
