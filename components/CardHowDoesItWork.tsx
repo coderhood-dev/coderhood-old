@@ -10,7 +10,7 @@ const CardHowDoesItWork = ({ image, title, description, imageSide }) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Flex w="80%" h={['75vh', '50vh', '50vh', '70vh', '70vh']}>
+    <Flex w="80%" h={['75vh', '50vh', '50vh', '70vh', '70vh']} as="section">
       <SimpleGrid
         columns={[1, 2, 2, 2]}
         display={imageSide === 'left' ? 'grid' : 'flex'}

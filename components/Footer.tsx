@@ -14,6 +14,7 @@ export const Footer = () => {
       flexDirection="row"
       alignItems="center"
       justifyContent="space-between"
+      as="footer"
     >
       <Button
         color={colorMode === 'light' ? 'gray.800' : 'white'}
