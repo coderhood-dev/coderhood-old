@@ -108,6 +108,110 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
         />
       ))}
 
+      <Flex w="100%" h="90vh" alignItems="center">
+        <Flex w="100%" h="60vh" alignItems="center" justifyContent="center">
+          <Flex
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+            textAlign="center"
+            width="80%"
+          >
+            <Image
+              src="indexroadmap.svg"
+              alt="learning with friends videocall"
+              justifyContent="flex-end"
+              w="25%"
+            />
+            <Text
+              color={colorMode === 'light' ? 'gray.800' : 'white'}
+              fontFamily="Poppins"
+              fontWeight="700"
+              fontSize={['1.2rem', '1.2rem', '2rem', '2.4rem', '2.8rem']}
+              mb={['5px', '5px', '7px']}
+            >
+              Empeza a aprender hoy.
+            </Text>
+            <Text
+              color={colorMode === 'light' ? 'gray.800' : 'white'}
+              fontFamily="Public Sans"
+              fontSize={['0.9rem', '0.9rem', '1rem', '1rem', '1.4rem']}
+              mt={['5px', '5px', '7px']}
+              mb={['10px', '10px', '20px', '30px']}
+            >
+              Elegi una de nuestras guias de aprendizaje y comenza a aprender
+              nuevas tecnologias que potenciaran tu futuro.
+            </Text>
+            <SimpleGrid
+              justifyContent="space-between"
+              w="100%"
+              mt={['1.3rem', '1.3rem', '1.4rem', '1.5rem']}
+              columns={[1, 2, 2, 2]}
+              spacing={['0.5rem', '2rem', '3rem', '4rem', '5rem']}
+            >
+              <Link href="/">
+                <Flex
+                  p="1.5rem"
+                  flexDirection="column"
+                  justifyContent="flex-start"
+                  textAlign="start"
+                  borderColor="#F26840"
+                  borderWidth="0.08rem"
+                  borderRadius="0.2rem"
+                >
+                  <Text
+                    color={colorMode === 'light' ? 'gray.800' : 'white'}
+                    fontFamily="Poppins"
+                    fontWeight="700"
+                    fontSize={['1.2rem', '1.2rem', '2rem', '2.4rem', '2.8rem']}
+                  >
+                    Frontend
+                  </Text>
+                  <Text
+                    color={colorMode === 'light' ? 'gray.800' : 'white'}
+                    fontFamily="Public Sans"
+                    fontSize={['0.9rem', '0.9rem', '1rem', '1rem', '1.4rem']}
+                    mt={['0.3rem', '0.3rem', '0.4rem', '0.5rem']}
+                  >
+                    Guia paso a paso para convertirte en un desarrollador
+                    frontend moderno.
+                  </Text>
+                </Flex>
+              </Link>
+              <Link href="/">
+                <Flex
+                  p="1.5rem"
+                  flexDirection="column"
+                  justifyContent="flex-start"
+                  textAlign="start"
+                  borderColor="#F26840"
+                  borderWidth="0.08rem"
+                  borderRadius="0.2rem"
+                >
+                  <Text
+                    color={colorMode === 'light' ? 'gray.800' : 'white'}
+                    fontFamily="Poppins"
+                    fontWeight="700"
+                    fontSize={['1.2rem', '1.2rem', '2rem', '2.4rem', '2.8rem']}
+                  >
+                    Backend
+                  </Text>
+                  <Text
+                    color={colorMode === 'light' ? 'gray.800' : 'white'}
+                    fontFamily="Public Sans"
+                    fontSize={['0.9rem', '0.9rem', '1rem', '1rem', '1.4rem']}
+                    mt={['0.3rem', '0.3rem', '0.4rem', '0.5rem']}
+                  >
+                    Guia paso a paso para convertirte en un desarrollador
+                    backend moderno.
+                  </Text>
+                </Flex>
+              </Link>
+            </SimpleGrid>
+          </Flex>
+        </Flex>
+      </Flex>
+
       <DiscordConnect />
     </>
   );
