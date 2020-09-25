@@ -35,7 +35,7 @@ const CardHowDoesItWork = ({ image, title, description, imageSide }) => {
           w={imageSide === 'left' ? '100%' : w}
         >
           <Text
-            color={colorMode === 'light' ? 'black' : 'white'}
+            color={colorMode === 'light' ? 'gray.800' : 'white'}
             fontFamily="DM Sans"
             fontSize={['1.2rem', '1.2rem', '2rem', '2.4rem', '2.8rem']}
             mb={['0.3rem', '0.3rem', '0.5rem', '0.5rem']}
@@ -43,7 +43,7 @@ const CardHowDoesItWork = ({ image, title, description, imageSide }) => {
             {title}
           </Text>
           <Text
-            color={colorMode === 'light' ? 'black' : 'white'}
+            color={colorMode === 'light' ? 'gray.800' : 'white'}
             fontFamily="Public Sans"
             fontSize={['0.9rem', '0.9rem', '1rem', '1rem', '1.4rem']}
           >

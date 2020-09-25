@@ -8,15 +8,15 @@ export const Footer = () => {
   return (
     <Flex
       w="100%"
-      px="2.5%"
-      py="3.1%"
+      px="3.1%"
+      py="2.5%"
       bg={colorMode === 'light' ? '#FAFAFA' : '#222222'}
       flexDirection="row"
       alignItems="center"
       justifyContent="space-between"
     >
       <Button
-        color={colorMode === 'light' ? 'black' : 'white'}
+        color={colorMode === 'light' ? 'gray.800' : 'white'}
         onClick={toggleColorMode}
         variant="outlined"
       >

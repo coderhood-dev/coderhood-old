@@ -53,7 +53,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
         <Flex w="100%" h="60vh" alignItems="center" justifyContent="center">
           <Flex direction="column" justifyContent="flex-start" width="80%">
             <Text
-              color={colorMode === 'light' ? 'black' : 'white'}
+              color={colorMode === 'light' ? 'gray.800' : 'white'}
               fontFamily="Poppins"
               fontSize={['2rem', '2rem', '3.5rem', '3.2rem', '4.1rem']}
               width="50%"
@@ -70,7 +70,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
               Bienvenido a tu comunidad.
             </Text>
             <Text
-              color="white"
+              color={colorMode === 'light' ? 'gray.800' : 'white'}
               fontFamily="Public Sans"
               fontSize={['1rem', '1rem', '1.1rem', '1.1rem', '1.3rem']}
               mt={['0.3rem', '0.3rem', '0.5rem']}
