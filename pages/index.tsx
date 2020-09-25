@@ -130,7 +130,8 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
               src="rocket.svg"
               alt="rocket image"
               justifyContent="flex-end"
-              w="25%"
+              w={['14rem', '20rem', '30rem', '30rem', '30rem']}
+              mb={['-2.5rem', '-4rem', '-6rem', '-5.5rem', '-5.5rem']}
             />
             <Text
               color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
@@ -155,7 +156,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
               justifyContent="space-around"
               w="90%"
               mt={['1.3rem', '1.3rem', '1.4rem', '1.5rem']}
-              columns={[1, 2, 2, 2]}
+              columns={[1, 2, 2, 2, 2]}
               spacing={['0.5rem', '2rem', '3rem', '4rem', '5rem']}
             >
               <Link href="/" _hover={{ color: 'gray.300' }} target="_blank">
