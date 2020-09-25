@@ -1,7 +1,5 @@
 import React from 'react';
-import { GetStaticProps } from 'next';
 import styled from '@emotion/styled';
-import Typed from 'react-typed';
 import {
   Flex,
   Image,
@@ -10,11 +8,10 @@ import {
   Link,
   useColorMode,
 } from '@chakra-ui/core';
-import { getRoadmaps, GetRoadmapsResponse } from '../api/roadmaps';
+import { GetRoadmapsResponse } from '../api/roadmaps';
 import { Text } from '../components';
 import CardHowDoesItWork from '../components/CardHowDoesItWork';
 import DiscordConnect from '../components/DiscordConnect';
-import { useBreakpointValue } from '@chakra-ui/media-query';
 
 interface Props {
   roadmaps: GetRoadmapsResponse;
@@ -35,7 +32,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const HowDoesItWork = [
     {
-      image: 'indexone.svg',
+      image: 'learn.svg',
       title: 'Un lugar para aprender y enseñar.',
       description:
         'En Coderhood Academy es y siempre será un lugar donde no sólo podés estudiar programacion sino también compartir tu conocimiento con otras personas que sienten lo mismo que vos, un lugar donde vas a poder tanto estudiar como enseñar.',
@@ -43,7 +40,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
     },
 
     {
-      image: 'indextwo.svg',
+      image: 'study.svg',
       title: 'Acompañamiento continuo.',
       description:
         'Desde la dirección y los profesores hasta nuestro CEO, todos nos encontramos a tu disposición día a día para brindarte la mejor calidad de servicio.',
@@ -51,7 +48,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
     },
 
     {
-      image: 'indexthree.svg',
+      image: 'game.svg',
       title: 'Valores.',
       description:
         'Sabemos la importancia de acompañar tus estudios que te representen y los esgrimimos con orgullo: honestidad, transparencia, accesibilidad, buena voluntad, inclusión, proactividad y mejora continua. ¡Estudiar en Coderhood Academy es invertir en tu futuro con garantía certera de satisfacción y sin fecha de expiración!',
@@ -130,8 +127,8 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
             width="80%"
           >
             <Image
-              src="indexroadmap.svg"
-              alt="learning with friends videocall"
+              src="rocket.svg"
+              alt="rocket image"
               justifyContent="flex-end"
               w="25%"
             />

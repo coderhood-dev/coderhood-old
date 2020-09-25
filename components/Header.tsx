@@ -31,7 +31,7 @@ const HeaderButton = ({
 
 export const Header = () => {
   const { user, doSignOut } = useAuth();
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
   return (
     <Flex
       as="header"
@@ -41,7 +41,7 @@ export const Header = () => {
       py="1.25rem"
       width="full"
       height="4.5rem"
-      bg={colorMode === 'light' ? '#FAFAFA' : '#222222'}
+      bg={colorMode === 'light' ? 'gray.300' : 'gray.800'}
     >
       <Link href="/">
         <Image
@@ -51,23 +51,6 @@ export const Header = () => {
           cursor="pointer"
         />
       </Link>
-
-      {/* 
-      <Flex as="nav" align="center" justify="flex-end">
-        <HeaderButton href="/jobs">Trabajos</HeaderButton>
-        <HeaderButton href="/blog">Blog</HeaderButton>
-        {!user ? (
-          <>
-            <HeaderButton href="/signin">Iniciar sesión</HeaderButton>
-            <HeaderButton href="/signup">Registrate</HeaderButton>
-          </>
-        ) : (
-          <Flex onClick={doSignOut}>
-            <HeaderButton>Salir</HeaderButton>
-          </Flex>
-        )}
-      </Flex>
-       */}
     </Flex>
   );
 };

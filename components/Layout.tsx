@@ -18,7 +18,7 @@ export const Layout: React.FC<PropsWithChildren<Props>> = ({
       <Head title={title} />
       <Header />
       <Flex
-        bg={colorMode === 'light' ? '#FAFAFA' : '#222222'}
+        bg={colorMode === 'light' ? 'gray.300' : 'gray.800'}
         direction="column"
         flex={1}
         alignItems="center"

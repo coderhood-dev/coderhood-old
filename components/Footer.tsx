@@ -10,7 +10,7 @@ export const Footer = () => {
       w="100%"
       px="3.1%"
       py="2.5%"
-      bg={colorMode === 'light' ? '#FAFAFA' : '#222222'}
+      bg={colorMode === 'light' ? 'gray.300' : 'gray.800'}
       flexDirection="row"
       alignItems="center"
       justifyContent="space-between"
