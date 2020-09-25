@@ -131,14 +131,14 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
               alt="rocket image"
               justifyContent="flex-end"
               w={['14rem', '20rem', '30rem', '30rem', '30rem']}
-              mb={['-2.5rem', '-4rem', '-6rem', '-5.5rem', '-5.5rem']}
+              mb={['-3.2rem', '-7rem', '-7rem', '-7rem', '-7rem']}
             />
             <Text
               color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
               fontFamily="Poppins"
               fontWeight="700"
               fontSize={['1.2rem', '1.2rem', '2rem', '2.4rem', '2.8rem']}
-              mb={['5px', '5px', '7px']}
+              mb={['5px', '5px', '7px', '7px', '7px']}
             >
               Empeza a aprender hoy.
             </Text>
