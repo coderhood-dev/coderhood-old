@@ -12,7 +12,7 @@ const AnimatedContainer = styled(motion.div)`
   border-style: solid;
   border-radius: 4px;
   padding: 2rem;
-  background-color: white;
+  background-color: #fafafa;
   position: relative;
   top: -0.25rem;
   left: 0.25rem;

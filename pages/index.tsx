@@ -1,5 +1,6 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
+import styled from '@emotion/styled';
 import Typed from 'react-typed';
 import {
   Flex,
@@ -18,6 +19,17 @@ import { useBreakpointValue } from '@chakra-ui/media-query';
 interface Props {
   roadmaps: GetRoadmapsResponse;
 }
+
+const CardRoadmap = styled.div`
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: start;
+  border-color: #f26840;
+  border-width: 0.08rem;
+  border-radius: 0.2rem;
+`;
 
 const Home: React.FC<Props> = ({ roadmaps }) => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -53,7 +65,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
         <Flex w="100%" h="60vh" alignItems="center" justifyContent="center">
           <Flex direction="column" justifyContent="flex-start" width="80%">
             <Text
-              color={colorMode === 'light' ? 'gray.800' : 'white'}
+              color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
               fontFamily="Poppins"
               fontSize={['2rem', '2rem', '3.5rem', '3.2rem', '4.1rem']}
               width="50%"
@@ -70,7 +82,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
               Bienvenido a tu comunidad.
             </Text>
             <Text
-              color={colorMode === 'light' ? 'gray.800' : 'white'}
+              color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
               fontFamily="Public Sans"
               fontSize={['1rem', '1rem', '1.1rem', '1.1rem', '1.3rem']}
               mt={['0.3rem', '0.3rem', '0.5rem']}
@@ -81,14 +93,14 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
             <Link
               width={['4rem', '6rem', '7rem', '8rem']}
               href="https://discord.gg/xw2dbyv"
-              _hover={{ color: 'white' }}
+              _hover={{ color: 'gray.300' }}
               target="_blank"
             >
               <Button
                 _hover={{ bg: '#f26840' }}
                 bg="#f26840"
                 borderRadius="0.2rem"
-                color="white"
+                color="gray.300"
                 size="md"
                 fontSize="0.9rem"
                 width={['4rem', '6rem', '7rem', '8rem']}
@@ -124,7 +136,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
               w="25%"
             />
             <Text
-              color={colorMode === 'light' ? 'gray.800' : 'white'}
+              color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
               fontFamily="Poppins"
               fontWeight="700"
               fontSize={['1.2rem', '1.2rem', '2rem', '2.4rem', '2.8rem']}
@@ -133,7 +145,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
               Empeza a aprender hoy.
             </Text>
             <Text
-              color={colorMode === 'light' ? 'gray.800' : 'white'}
+              color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
               fontFamily="Public Sans"
               fontSize={['0.9rem', '0.9rem', '1rem', '1rem', '1.4rem']}
               mt={['5px', '5px', '7px']}
@@ -149,26 +161,18 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
               columns={[1, 2, 2, 2]}
               spacing={['0.5rem', '2rem', '3rem', '4rem', '5rem']}
             >
-              <Link href="/" _hover={{ color: 'white' }} target="_blank">
-                <Flex
-                  p="1.5rem"
-                  flexDirection="column"
-                  justifyContent="flex-start"
-                  textAlign="start"
-                  borderColor="#F26840"
-                  borderWidth="0.08rem"
-                  borderRadius="0.2rem"
-                >
+              <Link href="/" _hover={{ color: 'gray.300' }} target="_blank">
+                <CardRoadmap>
                   <Text
-                    color={colorMode === 'light' ? 'gray.800' : 'white'}
+                    color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
                     fontFamily="Poppins"
-                    fontWeight="700"
+                    fontWeight="500"
                     fontSize={['1.2rem', '1.2rem', '2rem', '2.3rem', '2.6rem']}
                   >
                     Frontend
                   </Text>
                   <Text
-                    color={colorMode === 'light' ? 'gray.800' : 'white'}
+                    color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
                     fontFamily="Public Sans"
                     fontSize={['0.9rem', '0.9rem', '1rem', '1rem', '1.4rem']}
                     mt={['0.3rem', '0.3rem', '0.4rem', '0.5rem']}
@@ -176,28 +180,20 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
                     Guia paso a paso para convertirte en un desarrollador
                     frontend moderno.
                   </Text>
-                </Flex>
+                </CardRoadmap>
               </Link>
-              <Link href="/" _hover={{ color: 'white' }} target="_blank">
-                <Flex
-                  p="1.5rem"
-                  flexDirection="column"
-                  justifyContent="flex-start"
-                  textAlign="start"
-                  borderColor="#F26840"
-                  borderWidth="0.08rem"
-                  borderRadius="0.2rem"
-                >
+              <Link href="/" _hover={{ color: 'gray.300' }} target="_blank">
+                <CardRoadmap>
                   <Text
-                    color={colorMode === 'light' ? 'gray.800' : 'white'}
+                    color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
                     fontFamily="Poppins"
-                    fontWeight="700"
+                    fontWeight="500"
                     fontSize={['1.2rem', '1.2rem', '2rem', '2.3rem', '2.6rem']}
                   >
                     Backend
                   </Text>
                   <Text
-                    color={colorMode === 'light' ? 'gray.800' : 'white'}
+                    color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
                     fontFamily="Public Sans"
                     fontSize={['0.9rem', '0.9rem', '1rem', '1rem', '1.4rem']}
                     mt={['0.3rem', '0.3rem', '0.4rem', '0.5rem']}
@@ -205,7 +201,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
                     Guia paso a paso para convertirte en un desarrollador
                     backend moderno.
                   </Text>
-                </Flex>
+                </CardRoadmap>
               </Link>
             </SimpleGrid>
           </Flex>

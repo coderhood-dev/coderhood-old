@@ -16,7 +16,7 @@ export const Footer = () => {
       justifyContent="space-between"
     >
       <Button
-        color={colorMode === 'light' ? 'gray.800' : 'white'}
+        color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
         onClick={toggleColorMode}
         variant="outlined"
       >

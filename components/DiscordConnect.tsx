@@ -43,24 +43,18 @@ const DiscordConnect = () => (
           width={['110px', '110px', '110px', '130px']}
           href="https://discord.gg/xw2dbyv"
           target="_blank"
+          _hover={{ color: 'gray.300' }}
         >
           <Button
             bg="gray.800"
             _hover={{ bg: 'gray.800', color: '#E2E8F0' }}
-            color="white"
+            color="gray.300"
             variant="solid"
             size="md"
             fontSize="0.9rem"
             width={['110px', '110px', '110px', '130px']}
           >
-            <Flex justifyContent="space-around">
-              Sumate
-              <Image
-                src="discord.svg"
-                alt="learning with friends videocall"
-                w="18%"
-              />
-            </Flex>
+            Sumate
           </Button>
         </Link>
       </Flex>
