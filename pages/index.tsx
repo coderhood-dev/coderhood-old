@@ -1,7 +1,14 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
 import Typed from 'react-typed';
-import { Flex, Image, SimpleGrid, Button, Link } from '@chakra-ui/core';
+import {
+  Flex,
+  Image,
+  SimpleGrid,
+  Button,
+  Link,
+  useColorMode,
+} from '@chakra-ui/core';
 import { getRoadmaps, GetRoadmapsResponse } from '../api/roadmaps';
 import { Text } from '../components';
 import CardHowDoesItWork from '../components/CardHowDoesItWork';
@@ -13,6 +20,7 @@ interface Props {
 }
 
 const Home: React.FC<Props> = ({ roadmaps }) => {
+  const { colorMode, toggleColorMode } = useColorMode();
   const HowDoesItWork = [
     {
       image: 'indexone.svg',
@@ -45,7 +53,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
         <Flex w="100%" h="60vh" alignItems="center" justifyContent="center">
           <Flex direction="column" justifyContent="flex-start" width="80%">
             <Text
-              color="white"
+              color={colorMode === 'light' ? 'black' : 'white'}
               fontFamily="Poppins"
               fontSize={['2rem', '2rem', '3.5rem', '3.2rem', '4.1rem']}
               width="50%"
