@@ -1,5 +1,4 @@
 import defaultTheme, { Theme } from '@chakra-ui/theme';
-
 // import { stylesConfig } from '../coderhood-ui/button/styles';
 import { Colors } from './colors';
 

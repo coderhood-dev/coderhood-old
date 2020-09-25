@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Box, Flex, Image } from '@chakra-ui/core';
+import { Box, Flex, Image, useColorMode } from '@chakra-ui/core';
 import { rgba } from 'polished';
 
 import { Colors } from '../theme/colors';
@@ -31,6 +31,7 @@ const HeaderButton = ({
 
 export const Header = () => {
   const { user, doSignOut } = useAuth();
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Flex
       as="header"
@@ -40,7 +41,7 @@ export const Header = () => {
       py="1.25rem"
       width="full"
       height="4.5rem"
-      bg="#222222"
+      bg={colorMode === 'light' ? '#FAFAFA' : '#222222'}
     >
       <Link href="/">
         <Image
