@@ -108,7 +108,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
         />
       ))}
 
-      <Flex w="100%" h="90vh" alignItems="center">
+      <Flex w="100%" h="100vh" alignItems="center">
         <Flex w="100%" h="60vh" alignItems="center" justifyContent="center">
           <Flex
             direction="column"
@@ -143,13 +143,13 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
               nuevas tecnologias que potenciaran tu futuro.
             </Text>
             <SimpleGrid
-              justifyContent="space-between"
-              w="100%"
+              justifyContent="space-around"
+              w="90%"
               mt={['1.3rem', '1.3rem', '1.4rem', '1.5rem']}
               columns={[1, 2, 2, 2]}
               spacing={['0.5rem', '2rem', '3rem', '4rem', '5rem']}
             >
-              <Link href="/">
+              <Link href="/" _hover={{ color: 'white' }} target="_blank">
                 <Flex
                   p="1.5rem"
                   flexDirection="column"
@@ -163,7 +163,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
                     color={colorMode === 'light' ? 'gray.800' : 'white'}
                     fontFamily="Poppins"
                     fontWeight="700"
-                    fontSize={['1.2rem', '1.2rem', '2rem', '2.4rem', '2.8rem']}
+                    fontSize={['1.2rem', '1.2rem', '2rem', '2.3rem', '2.6rem']}
                   >
                     Frontend
                   </Text>
@@ -178,7 +178,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
                   </Text>
                 </Flex>
               </Link>
-              <Link href="/">
+              <Link href="/" _hover={{ color: 'white' }} target="_blank">
                 <Flex
                   p="1.5rem"
                   flexDirection="column"
@@ -192,7 +192,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
                     color={colorMode === 'light' ? 'gray.800' : 'white'}
                     fontFamily="Poppins"
                     fontWeight="700"
-                    fontSize={['1.2rem', '1.2rem', '2rem', '2.4rem', '2.8rem']}
+                    fontSize={['1.2rem', '1.2rem', '2rem', '2.3rem', '2.6rem']}
                   >
                     Backend
                   </Text>
