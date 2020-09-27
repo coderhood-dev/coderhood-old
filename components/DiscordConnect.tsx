@@ -20,7 +20,7 @@ const DiscordConnect = () => (
         width="60%"
       >
         <Text
-          color="black"
+          color="gray.800"
           fontFamily="Poppins"
           fontWeight="700"
           fontSize={['1.2rem', '1.2rem', '2rem', '2.4rem', '2.8rem']}
@@ -29,7 +29,7 @@ const DiscordConnect = () => (
           Unite a la comunidad.
         </Text>
         <Text
-          color="black"
+          color="gray.800"
           fontFamily="Public Sans"
           fontSize={['0.9rem', '0.9rem', '1rem', '1rem', '1.4rem']}
           mt={['5px', '5px', '7px']}
@@ -43,24 +43,18 @@ const DiscordConnect = () => (
           width={['110px', '110px', '110px', '130px']}
           href="https://discord.gg/xw2dbyv"
           target="_blank"
+          _hover={{ color: 'gray.300' }}
         >
           <Button
-            bg="black"
-            _hover={{ bg: 'black', color: '#E2E8F0' }}
-            color="white"
+            bg="gray.800"
+            _hover={{ bg: 'gray.800', color: '#E2E8F0' }}
+            color="gray.300"
             variant="solid"
             size="md"
             fontSize="0.9rem"
             width={['110px', '110px', '110px', '130px']}
           >
-            <Flex justifyContent="space-around">
-              Sumate
-              <Image
-                src="discord.svg"
-                alt="learning with friends videocall"
-                w="18%"
-              />
-            </Flex>
+            Sumate
           </Button>
         </Link>
       </Flex>

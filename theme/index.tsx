@@ -31,6 +31,7 @@ export const coderhoodTheme = {
     },
     gray: {
       ...defaultTheme.colors.gray,
+      300: '#FAFAFA',
       600: '#2C2C2C',
       800: '#222222',
     },
