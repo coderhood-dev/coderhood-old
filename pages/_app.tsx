@@ -1,29 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import Amplify from 'aws-amplify';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ChakraProvider, CSSReset, ColorModeProvider } from '@chakra-ui/core';
 
 import '@material/react-text-field/dist/text-field.css';
 
+import config from '../src/aws-exports';
 import { initAuth } from '../context/auth';
 import { Layout } from '../components';
 import { AuthContext } from '../context';
 import { coderhoodTheme } from '../theme';
 
-const auth = initAuth(); // TODO: test this move
+Amplify.configure({ ...config, ssr: true });
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
-  const [user, setUser] = useState<firebase.User>(null);
-
-  useEffect(() => {
-    // Firebase authentication listener which updates useAuth's state
-    const removeListener = auth.onAuthStateChanged((authUser) => {
-      authUser ? setUser(authUser) : setUser(null);
-    });
-    return () => {
-      removeListener();
-    };
-  }, []);
+  // const [user, setUser] = useState<firebase.User>(null);
 
   return (
     <ChakraProvider theme={coderhoodTheme}>
@@ -35,11 +27,11 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
       </Head>
       <CSSReset />
       <ColorModeProvider>
-        <AuthContext.Provider value={{ ...auth, user }}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </AuthContext.Provider>
+        {/* <AuthContext.Provider value={{ ...auth, user }}> */}
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+        {/* </AuthContext.Provider> */}
       </ColorModeProvider>
     </ChakraProvider>
   );

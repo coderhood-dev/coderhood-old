@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-coderhood-dev-152407-authRole",
+      "UnauthRoleArn": "arn:aws:iam::113562097580:role/amplify-coderhood-dev-152407-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::113562097580:role/amplify-coderhood-dev-152407-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-coderhood-dev-152407-deployment",
+      "UnauthRoleName": "amplify-coderhood-dev-152407-unauthRole",
+      "StackName": "amplify-coderhood-dev-152407",
+      "StackId": "arn:aws:cloudformation:us-east-1:113562097580:stack/amplify-coderhood-dev-152407/a723f4a0-00ee-11eb-a71f-1208f0f76cbf",
+      "AmplifyAppId": "d1i6pdb4v66nuh"
+    },
+    "categories": {
+      "auth": {
+        "coderhood15b7df2e": {}
+      }
+    }
+  }
+}

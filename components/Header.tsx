@@ -4,7 +4,7 @@ import { Box, Flex, Image, useColorMode } from '@chakra-ui/core';
 import { rgba } from 'polished';
 
 import { Colors } from '../theme/colors';
-import { useAuth } from '../hooks';
+// import { useAuth } from '../hooks';
 
 const HeaderButton = ({
   children,
@@ -30,7 +30,7 @@ const HeaderButton = ({
 );
 
 export const Header = () => {
-  const { user, doSignOut } = useAuth();
+  // const { user, doSignOut } = useAuth();
   const { colorMode } = useColorMode();
   return (
     <Flex
