@@ -154,21 +154,17 @@ const Roadmap: React.FC<Props> = ({ roadmap }) => {
           </Text>
           <Link
             href="https://discord.gg/xw2dbyv"
-            width={['4rem', '6rem', '7rem', '8rem']}
-            _hover={{ color: 'gray.300' }}
+            width={['5rem', '6rem', '7rem', '8rem']}
+            _hover={{ color: 'gray.300', bg: '#f26840' }}
             target="_blank"
+            fontSize="0.9rem"
+            borderRadius="0.2rem"
+            bg="#f26840"
+            textAlign="center"
+            padding={['0.4rem', '0.4rem', '0.6rem', '0.6rem']}
+            color="gray.300"
           >
-            <Button
-              _hover={{ bg: '#f26840' }}
-              bg="#f26840"
-              borderRadius="0.2rem"
-              color="gray.300"
-              size="md"
-              fontSize="0.9rem"
-              width={['4rem', '6rem', '7rem', '8rem']}
-            >
-              Unite
-            </Button>
+            Unite
           </Link>
         </Center>
       </Center>
