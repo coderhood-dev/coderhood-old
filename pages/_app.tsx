@@ -6,13 +6,13 @@ import { ChakraProvider, CSSReset, ColorModeProvider } from '@chakra-ui/core';
 
 import '@material/react-text-field/dist/text-field.css';
 
-import config from '../src/aws-exports';
+//import config from '../src/aws-exports';
 import { initAuth } from '../context/auth';
 import { Layout } from '../components';
 import { AuthContext } from '../context';
 import { coderhoodTheme } from '../theme';
 
-Amplify.configure({ ...config, ssr: true });
+//Amplify.configure({ ...config, ssr: true });
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   // const [user, setUser] = useState<firebase.User>(null);

@@ -1,15 +1,19 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { GetStaticProps } from 'next';
+import NextLink from 'next/link';
 import {
+  Link,
   Flex,
   Image,
   SimpleGrid,
   Button,
-  Link,
   useColorMode,
+  Heading,
+  Center,
 } from '@chakra-ui/core';
-import { GetRoadmapsResponse } from '../api/roadmaps';
-import { Text } from '../components';
+import { getRoadmaps, GetRoadmapsResponse } from '../api/roadmaps';
+import { Layout, Card, Text, TextureGrid, Dash } from '../components';
 import CardHowDoesItWork from '../components/CardHowDoesItWork';
 import DiscordConnect from '../components/DiscordConnect';
 
@@ -26,6 +30,7 @@ const CardRoadmap = styled.div`
   border-color: #f26840;
   border-width: 0.08rem;
   border-radius: 0.2rem;
+  cursor: pointer;
 `;
 
 const Home: React.FC<Props> = ({ roadmaps }) => {
@@ -88,8 +93,8 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
               En coderhood impulzamos el aprendizaje autodidacta y colaborativo.
             </Text>
             <Link
-              width={['4rem', '6rem', '7rem', '8rem']}
               href="https://discord.gg/xw2dbyv"
+              width={['4rem', '6rem', '7rem', '8rem']}
               _hover={{ color: 'gray.300' }}
               target="_blank"
             >
@@ -159,48 +164,48 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
               columns={[1, 2, 2, 2, 2]}
               spacing={['0.5rem', '2rem', '3rem', '4rem', '5rem']}
             >
-              <Link href="/" _hover={{ color: 'gray.300' }} target="_blank">
-                <CardRoadmap>
-                  <Text
-                    color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
-                    fontFamily="Poppins"
-                    fontWeight="500"
-                    fontSize={['1.2rem', '1.2rem', '2rem', '2.3rem', '2.6rem']}
+              {roadmaps &&
+                roadmaps.map((roadmap) => (
+                  <NextLink
+                    cursor="pointer"
+                    key={roadmap._id}
+                    as={`/roadmaps/${roadmap.name}`}
+                    href="/roadmaps/[name]"
+                    _hover={{ color: 'gray.300' }}
+                    target="_blank"
                   >
-                    Frontend
-                  </Text>
-                  <Text
-                    color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
-                    fontFamily="Public Sans"
-                    fontSize={['0.9rem', '0.9rem', '1rem', '1rem', '1.4rem']}
-                    mt={['0.3rem', '0.3rem', '0.4rem', '0.5rem']}
-                  >
-                    Guia paso a paso para convertirte en un desarrollador
-                    frontend moderno.
-                  </Text>
-                </CardRoadmap>
-              </Link>
-              <Link href="/" _hover={{ color: 'gray.300' }} target="_blank">
-                <CardRoadmap>
-                  <Text
-                    color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
-                    fontFamily="Poppins"
-                    fontWeight="500"
-                    fontSize={['1.2rem', '1.2rem', '2rem', '2.3rem', '2.6rem']}
-                  >
-                    Backend
-                  </Text>
-                  <Text
-                    color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
-                    fontFamily="Public Sans"
-                    fontSize={['0.9rem', '0.9rem', '1rem', '1rem', '1.4rem']}
-                    mt={['0.3rem', '0.3rem', '0.4rem', '0.5rem']}
-                  >
-                    Guia paso a paso para convertirte en un desarrollador
-                    backend moderno.
-                  </Text>
-                </CardRoadmap>
-              </Link>
+                    <CardRoadmap>
+                      <Text
+                        color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
+                        fontFamily="Poppins"
+                        fontWeight="500"
+                        fontSize={[
+                          '1.2rem',
+                          '1.2rem',
+                          '2rem',
+                          '2.3rem',
+                          '2.6rem',
+                        ]}
+                      >
+                        {roadmap.title}
+                      </Text>
+                      <Text
+                        color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
+                        fontFamily="Public Sans"
+                        fontSize={[
+                          '0.9rem',
+                          '0.9rem',
+                          '1rem',
+                          '1rem',
+                          '1.4rem',
+                        ]}
+                        mt={['0.3rem', '0.3rem', '0.4rem', '0.5rem']}
+                      >
+                        {roadmap.description}
+                      </Text>
+                    </CardRoadmap>
+                  </NextLink>
+                ))}
             </SimpleGrid>
           </Flex>
         </Flex>
@@ -209,6 +214,13 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
       <DiscordConnect />
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const roadmaps = await getRoadmaps();
+  return {
+    props: { roadmaps },
+  };
 };
 
 export default Home;
