@@ -66,8 +66,9 @@ const CardTech = ({ image, title, description }) => {
         </Flex>
         <Flex justifyContent="space-between" w="100%">
           <AvatarGroup>
-            {avatars.map((avatar) => (
+            {avatars.map((avatar, index) => (
               <Avatar
+                key={index}
                 bg={colorMode === 'light' ? 'gray.300' : 'gray.800'}
                 w={['0%', '2.2rem', '2.2rem', '2.5rem', '3rem']}
                 h={['0%', '2.2rem', '2.2rem', '2.5rem', '3rem']}
