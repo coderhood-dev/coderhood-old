@@ -113,8 +113,9 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
           </Flex>
         </Flex>
       </Flex>
-      {HowDoesItWork.map((how) => (
+      {HowDoesItWork.map((how, index) => (
         <CardHowDoesItWork
+          key={index}
           image={how.image}
           title={how.title}
           description={how.description}
@@ -165,14 +166,11 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
               spacing={['0.5rem', '2rem', '3rem', '4rem', '5rem']}
             >
               {roadmaps &&
-                roadmaps.map((roadmap) => (
+                roadmaps.map((roadmap, index) => (
                   <NextLink
-                    cursor="pointer"
-                    key={roadmap._id}
+                    key={index}
                     as={`/roadmaps/${roadmap.name}`}
                     href="/roadmaps/[name]"
-                    _hover={{ color: 'gray.300' }}
-                    target="_blank"
                   >
                     <CardRoadmap>
                       <Text
