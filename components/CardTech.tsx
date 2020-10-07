@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import styled from '@emotion/styled';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { Layout, Card, Text } from '../components';
 import {
   AvatarGroup,
   Avatar,
@@ -10,11 +7,17 @@ import {
   Flex,
   Image,
   useColorMode,
-  Heading,
 } from '@chakra-ui/core';
+import { Text } from '../components';
 
-const CardTech = ({ image, title, description }) => {
-  const [show, setShow] = React.useState(false);
+interface Props {
+  image: string;
+  title: string;
+  description: string;
+}
+
+const CardTech: React.FC<Props> = ({ image, title, description }) => {
+  const [show, setShow] = useState(false);
   const handleToggle = () => setShow(!show);
 
   const { colorMode } = useColorMode();
