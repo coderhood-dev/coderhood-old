@@ -51,7 +51,8 @@ const CardTech: React.FC<Props> = ({ image, title, description }) => {
         <Flex flexDirection="column">
           <Text
             color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
-            fontFamily="DM Sans"
+            fontFamily="Poppins"
+            fontWeight="500"
             fontSize={['1.2rem', '1.2rem', '2rem', '2.4rem', '2.8rem']}
           >
             {title}
