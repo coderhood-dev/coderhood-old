@@ -2,7 +2,7 @@ import React from 'react';
 import { Flex, Button, Link } from '@chakra-ui/core';
 import { Text } from '../components';
 
-const DiscordConnect = () => (
+const DiscordInvite = () => (
   <>
     <Flex
       w="100%"
@@ -61,4 +61,4 @@ const DiscordConnect = () => (
   </>
 );
 
-export default DiscordConnect;
+export default DiscordInvite;

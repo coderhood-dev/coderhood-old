@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Image, Box, Link, useColorMode, Button, Flex } from '@chakra-ui/core';
-import DiscordConnect from '../components/DiscordConnect';
+import DiscordInvite from '../components/DiscordInvite';
 export const Footer = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
@@ -12,13 +12,11 @@ export const Footer = () => {
         alt="wave up"
         w="100%"
         mb={['-0.8px', '-1px', '-1px', '-1px', '-1px']}
-        style={{
-          transform: 'rotate(-180deg)',
-        }}
+        transform="rotate(-180deg)"
         bg={colorMode === 'light' ? 'gray.300' : 'gray.800'}
         h="7rem"
       />
-      <DiscordConnect />
+      <DiscordInvite />
       <Flex
         w="100%"
         px="3.1%"
@@ -30,7 +28,7 @@ export const Footer = () => {
         as="footer"
       >
         <Button
-          color={colorMode === 'light' ? 'gray.800' : 'gray.300'}
+          color={colorMode === 'light' ? 'gray.300' : 'gray.800'}
           onClick={toggleColorMode}
           variant="outlined"
         >
