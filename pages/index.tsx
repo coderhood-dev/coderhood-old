@@ -11,7 +11,6 @@ import {
 import { GetRoadmapsResponse } from '../api/roadmaps';
 import { Text } from '../components';
 import CardHowDoesItWork from '../components/CardHowDoesItWork';
-import DiscordConnect from '../components/DiscordConnect';
 
 interface Props {
   roadmaps: GetRoadmapsResponse;
@@ -117,7 +116,7 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
         />
       ))}
 
-      <Flex w="100%" h="100vh" alignItems="center">
+      <Flex w="100%" h="100vh" alignItems="center" mb="5rem">
         <Flex w="100%" h="60vh" alignItems="center" justifyContent="center">
           <Flex
             direction="column"
@@ -205,8 +204,6 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
           </Flex>
         </Flex>
       </Flex>
-
-      <DiscordConnect />
     </>
   );
 };

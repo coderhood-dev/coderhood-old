@@ -1,16 +1,15 @@
 import React from 'react';
-import { Flex, Image, SimpleGrid, Button, Link } from '@chakra-ui/core';
+import { Flex, Button, Link } from '@chakra-ui/core';
 import { Text } from '../components';
 
-const DiscordConnect = () => (
+const DiscordInvite = () => (
   <>
     <Flex
       w="100%"
-      h="50vh"
-      alignItems="center"
+      h="17rem"
+      alignItems="flex-end"
       justifyContent="center"
       bg="#f26840"
-      mt="10vh"
     >
       <Flex
         direction="column"
@@ -62,4 +61,4 @@ const DiscordConnect = () => (
   </>
 );
 
-export default DiscordConnect;
+export default DiscordInvite;
