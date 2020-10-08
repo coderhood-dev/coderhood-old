@@ -11,7 +11,6 @@ import {
 import { GetRoadmapsResponse } from '../api/roadmaps';
 import { Text } from '../components';
 import CardHowDoesItWork from '../components/CardHowDoesItWork';
-import DiscordConnect from '../components/DiscordConnect';
 
 interface Props {
   roadmaps: GetRoadmapsResponse;
@@ -205,8 +204,6 @@ const Home: React.FC<Props> = ({ roadmaps }) => {
           </Flex>
         </Flex>
       </Flex>
-
-      <DiscordConnect />
     </>
   );
 };
