@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import { Flex } from '@chakra-ui/core';
+import { Flex, useColorMode } from '@chakra-ui/core';
 
 import Head from './Head';
 import { Header, Footer } from './';
@@ -11,16 +11,24 @@ interface Props {
 export const Layout: React.FC<PropsWithChildren<Props>> = ({
   children,
   title,
-}) => (
-  <Flex direction="column" minHeight="100vh">
-    <Head title={title} />
-    <Header />
-    <Flex direction="column" flex={1} alignItems="center">
-      {children}
+}) => {
+  const { colorMode, toggleColorMode } = useColorMode();
+  return (
+    <Flex direction="column" minHeight="100vh">
+      <Head title={title} />
+      <Header />
+      <Flex
+        bg={colorMode === 'light' ? 'gray.300' : 'gray.800'}
+        direction="column"
+        flex={1}
+        alignItems="center"
+      >
+        {children}
+      </Flex>
+      <Footer />
     </Flex>
-    <Footer />
-  </Flex>
-);
+  );
+};
 
 Layout.defaultProps = {
   title: process.env.NEXT_PUBLIC_APP_NAME,
