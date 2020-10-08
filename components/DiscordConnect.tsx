@@ -10,7 +10,6 @@ const DiscordConnect = () => (
       alignItems="flex-end"
       justifyContent="center"
       bg="#f26840"
-      mt="3rem"
     >
       <Flex
         direction="column"

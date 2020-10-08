@@ -7,6 +7,17 @@ export const Footer = () => {
 
   return (
     <>
+      <Image
+        src="../waveup.svg"
+        alt="wave up"
+        w="100%"
+        mb={['-0.8px', '-1px', '-1px', '-1px', '-1px']}
+        style={{
+          transform: 'rotate(-180deg)',
+        }}
+        bg={colorMode === 'light' ? 'gray.300' : 'gray.800'}
+        h="7rem"
+      />
       <DiscordConnect />
       <Flex
         w="100%"
