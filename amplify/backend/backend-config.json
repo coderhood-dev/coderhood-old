@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "coderhood15b7df2e": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
